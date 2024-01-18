@@ -333,6 +333,25 @@
     <Compile Include="Forms\Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Prescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Prescription.Designer.cs">
+      <DependentUpon>Prescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Treatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Treatment.Designer.cs">
+      <DependentUpon>Treatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageProcess\ImageProcessor.cs" />
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -353,22 +372,31 @@
     <EmbeddedResource Include="Forms\Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Prescription.resx">
+      <DependentUpon>Prescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Treatment.resx">
+      <DependentUpon>Treatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -386,43 +414,7 @@
     <None Include="Resources\tooth1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\mouth.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\patient.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mouth1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\px.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dasb.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logout31.png" />
+    <None Include="Resources\users.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('..\packages\Fody.4.0.2\build\Fody.targets')" />
