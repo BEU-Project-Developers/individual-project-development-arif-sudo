@@ -46,12 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.patAllergies = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.patAddress = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.patGender = new System.Windows.Forms.TextBox();
+            this.patPhone = new System.Windows.Forms.TextBox();
+            this.patName = new System.Windows.Forms.TextBox();
+            this.patSaveButton = new System.Windows.Forms.Button();
+            this.patDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -95,7 +99,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(296, 631);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox7
             // 
@@ -156,7 +159,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label8
             // 
@@ -255,24 +257,70 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.patAllergies);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.patAddress);
+            this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.patGender);
+            this.panel2.Controls.Add(this.patPhone);
+            this.panel2.Controls.Add(this.patName);
+            this.panel2.Controls.Add(this.patSaveButton);
+            this.panel2.Controls.Add(this.patDateTimePicker);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Location = new System.Drawing.Point(318, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(769, 259);
+            this.panel2.Size = new System.Drawing.Size(769, 281);
             this.panel2.TabIndex = 9;
+            // 
+            // patAllergies
+            // 
+            this.patAllergies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patAllergies.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patAllergies.Location = new System.Drawing.Point(573, 157);
+            this.patAllergies.Multiline = true;
+            this.patAllergies.Name = "patAllergies";
+            this.patAllergies.Size = new System.Drawing.Size(172, 82);
+            this.patAllergies.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label15.Location = new System.Drawing.Point(446, 162);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 22);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Allergies";
+            // 
+            // patAddress
+            // 
+            this.patAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patAddress.Location = new System.Drawing.Point(133, 162);
+            this.patAddress.Name = "patAddress";
+            this.patAddress.Size = new System.Drawing.Size(172, 30);
+            this.patAddress.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label14.Location = new System.Drawing.Point(26, 165);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(76, 22);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Address";
             // 
             // dataGridView1
             // 
@@ -285,56 +333,55 @@
             this.dataGridView1.Size = new System.Drawing.Size(769, 223);
             this.dataGridView1.TabIndex = 10;
             // 
-            // textBox3
+            // patGender
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(573, 107);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 30);
-            this.textBox3.TabIndex = 28;
+            this.patGender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patGender.Location = new System.Drawing.Point(573, 98);
+            this.patGender.Name = "patGender";
+            this.patGender.Size = new System.Drawing.Size(172, 30);
+            this.patGender.TabIndex = 28;
             // 
-            // textBox2
+            // patPhone
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 30);
-            this.textBox2.TabIndex = 27;
+            this.patPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patPhone.Location = new System.Drawing.Point(133, 98);
+            this.patPhone.Name = "patPhone";
+            this.patPhone.Size = new System.Drawing.Size(172, 30);
+            this.patPhone.TabIndex = 27;
             // 
-            // textBox1
+            // patName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 30);
-            this.textBox1.TabIndex = 26;
+            this.patName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.patName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patName.Location = new System.Drawing.Point(133, 32);
+            this.patName.Name = "patName";
+            this.patName.Size = new System.Drawing.Size(172, 30);
+            this.patName.TabIndex = 26;
             // 
-            // button1
+            // patSaveButton
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(321, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.patSaveButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.patSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patSaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patSaveButton.ForeColor = System.Drawing.Color.White;
+            this.patSaveButton.Location = new System.Drawing.Point(318, 218);
+            this.patSaveButton.Name = "patSaveButton";
+            this.patSaveButton.Size = new System.Drawing.Size(134, 40);
+            this.patSaveButton.TabIndex = 25;
+            this.patSaveButton.Text = "Save";
+            this.patSaveButton.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // patDateTimePicker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(573, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 34);
-            this.dateTimePicker1.TabIndex = 23;
+            this.patDateTimePicker.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.patDateTimePicker.Location = new System.Drawing.Point(573, 28);
+            this.patDateTimePicker.Name = "patDateTimePicker";
+            this.patDateTimePicker.ShowUpDown = true;
+            this.patDateTimePicker.Size = new System.Drawing.Size(172, 34);
+            this.patDateTimePicker.TabIndex = 23;
             // 
             // label13
             // 
@@ -342,7 +389,7 @@
             this.label13.BackColor = System.Drawing.Color.White;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label13.Location = new System.Drawing.Point(446, 110);
+            this.label13.Location = new System.Drawing.Point(446, 101);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 22);
             this.label13.TabIndex = 22;
@@ -366,12 +413,11 @@
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(26, 110);
+            this.label11.Location = new System.Drawing.Point(26, 101);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 22);
             this.label11.TabIndex = 20;
             this.label11.Text = "Phone";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -401,7 +447,7 @@
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(601, 338);
+            this.maskedTextBox1.Location = new System.Drawing.Point(601, 355);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
             this.maskedTextBox1.TabIndex = 11;
@@ -465,16 +511,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox patName;
+        private System.Windows.Forms.Button patSaveButton;
+        private System.Windows.Forms.DateTimePicker patDateTimePicker;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox patPhone;
+        private System.Windows.Forms.TextBox patGender;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -484,5 +530,9 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox patAddress;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox patAllergies;
+        private System.Windows.Forms.Label label15;
     }
 }
