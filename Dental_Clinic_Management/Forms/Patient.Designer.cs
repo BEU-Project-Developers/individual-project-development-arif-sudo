@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.patGenderCommoBox = new System.Windows.Forms.ComboBox();
             this.patAllergies = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.patAddress = new System.Windows.Forms.TextBox();
@@ -61,8 +63,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.patGenderCommoBox = new System.Windows.Forms.ComboBox();
+            this.patientDGV = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -73,7 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -274,10 +275,22 @@
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(318, 56);
+            this.panel2.Location = new System.Drawing.Point(338, 56);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 281);
             this.panel2.TabIndex = 9;
+            // 
+            // patGenderCommoBox
+            // 
+            this.patGenderCommoBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patGenderCommoBox.FormattingEnabled = true;
+            this.patGenderCommoBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.patGenderCommoBox.Location = new System.Drawing.Point(573, 95);
+            this.patGenderCommoBox.Name = "patGenderCommoBox";
+            this.patGenderCommoBox.Size = new System.Drawing.Size(172, 34);
+            this.patGenderCommoBox.TabIndex = 33;
             // 
             // patAllergies
             // 
@@ -439,35 +452,38 @@
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(601, 355);
+            this.maskedTextBox1.Location = new System.Drawing.Point(621, 355);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
             this.maskedTextBox1.TabIndex = 11;
             this.maskedTextBox1.Text = "Filter By Username";
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView2
+            // patientDGV
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(318, 388);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(769, 215);
-            this.dataGridView2.TabIndex = 12;
-            // 
-            // patGenderCommoBox
-            // 
-            this.patGenderCommoBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patGenderCommoBox.FormattingEnabled = true;
-            this.patGenderCommoBox.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.patGenderCommoBox.Location = new System.Drawing.Point(573, 95);
-            this.patGenderCommoBox.Name = "patGenderCommoBox";
-            this.patGenderCommoBox.Size = new System.Drawing.Size(172, 34);
-            this.patGenderCommoBox.TabIndex = 33;
+            this.patientDGV.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.patientDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.patientDGV.GridColor = System.Drawing.Color.Silver;
+            this.patientDGV.Location = new System.Drawing.Point(338, 388);
+            this.patientDGV.Name = "patientDGV";
+            this.patientDGV.RowHeadersVisible = false;
+            this.patientDGV.RowHeadersWidth = 51;
+            this.patientDGV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.patientDGV.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial Narrow", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientDGV.RowTemplate.Height = 25;
+            this.patientDGV.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.patientDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.patientDGV.Size = new System.Drawing.Size(769, 215);
+            this.patientDGV.TabIndex = 12;
+            this.patientDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientDGV_CellContentClick);
             // 
             // Patient
             // 
@@ -475,7 +491,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.patientDGV);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -484,6 +500,7 @@
             this.Name = "Patient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Patient";
+            this.Load += new System.EventHandler(this.Patient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -496,7 +513,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -532,7 +549,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView patientDGV;
         private System.Windows.Forms.TextBox patAddress;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox patAllergies;

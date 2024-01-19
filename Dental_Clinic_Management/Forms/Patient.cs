@@ -42,6 +42,31 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+            MyPatient patient = new MyPatient();
+            string query = "SELECT * FROM PatientTable";
+            DataSet ds = patient.ShowPatient(query);
+            patientDGV.DataSource = ds.Tables[0];
+        }
+
+        int key = 0;
+        private void patientDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            patName.Text = patientDGV.SelectedRows[0].Cells[1].Value.ToString();
+            patPhone.Text = patientDGV.SelectedRows[0].Cells[2].Value.ToString();
+            patAddress.Text = patientDGV.SelectedRows[0].Cells[3].Value.ToString();
+            patGenderCommoBox.SelectedItem = patientDGV.SelectedRows[0].Cells[5].Value.ToString();
+            patAllergies.Text = patientDGV.SelectedRows[0].Cells[6].Value.ToString();
+            if (patName.Text == "")
+            {
+                key = 0;
+            }else
+            {
+                key = Convert.ToInt32(patientDGV.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
     }
 
 }
