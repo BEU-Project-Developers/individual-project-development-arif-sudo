@@ -35,6 +35,7 @@ namespace Dental_Clinic_Management.Forms
             {
                 patient.AddPatient(name, phone, address, dateOfBirth, gender, allergies);
                 MessageBox.Show("Patient added succesfully");
+                this.Populate_PatientDGV();
             }
             catch (Exception ex)
             {
@@ -42,16 +43,20 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
-
-        private void Patient_Load(object sender, EventArgs e)
+        private void Populate_PatientDGV()
         {
             MyPatient patient = new MyPatient();
             string query = "SELECT * FROM PatientTable";
             DataSet ds = patient.ShowPatient(query);
             patientDGV.DataSource = ds.Tables[0];
         }
+        private void Patient_Load(object sender, EventArgs e)
+        {
+            this.Populate_PatientDGV();  
+        }
 
-        int key = 0;
+        int key = 0; // key here represents PatId in database
+        // later we can use key to delete columns 
         private void patientDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             patName.Text = patientDGV.SelectedRows[0].Cells[1].Value.ToString();
@@ -66,6 +71,59 @@ namespace Dental_Clinic_Management.Forms
             {
                 key = Convert.ToInt32(patientDGV.SelectedRows[0].Cells[0].Value.ToString());
             }
+        }
+
+        private void patDeleteButton_Click(object sender, EventArgs e)
+        {
+            MyPatient patient = new MyPatient();
+            if (key == 0)
+            {
+                MessageBox.Show("Select patient to delete");
+            }else
+            {
+                try
+                {
+                    string query = "DELETE FROM PatientTable WHERE PatId=" + key + "";
+                    patient.DeletePatient(query);
+                    MessageBox.Show("Patient deleted succesfully");
+                    this.Populate_PatientDGV();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+        }
+
+        private void patEditButton_Click(object sender, EventArgs e)
+        {
+            MyPatient patient = new MyPatient();
+            string name = patName.Text;
+            string phone = patPhone.Text;
+            string address = patAddress.Text;
+            DateTime dateOfBirth = patDateTimePicker.Value.Date;
+            string gender = patGenderCommoBox.SelectedItem?.ToString();
+            string allergies = patAllergies.Text;
+            if (key == 0)
+            {
+                MessageBox.Show("Select patient to update");
+            }
+            else
+            {
+                try
+                {
+                    patient.UpdatePatient(name, phone, address, dateOfBirth, gender, allergies, key);
+                    MessageBox.Show("Patient updated succesfully");
+                    this.Populate_PatientDGV();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+            
         }
     }
 
