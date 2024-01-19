@@ -9,10 +9,10 @@ namespace Dental_Clinic_Management.Connection
 {
     public class ConnectionString
     {
-        public SqlConnection GetCon() { 
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = @"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\USER\\Desktop\\individual-project-development-arif-sudo\\Dental_Clinic_Management\\DentalClinicDb.mdf;Integrated Security=True;Connect Timeout=30";
-            return connection; 
+        public String GetConnectionString() { 
+            string databaseName = "DentalClinic";
+            string connectionString = $"Data Source=EARESTIN\\SQLEXPRESS;Initial Catalog={databaseName};Integrated Security=True";
+            return connectionString; 
         }
     }
 }

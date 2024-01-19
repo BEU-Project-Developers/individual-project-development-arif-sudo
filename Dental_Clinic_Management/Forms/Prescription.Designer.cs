@@ -435,7 +435,7 @@
             this.label11.BackColor = System.Drawing.Color.White;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(26, 107);
+            this.label11.Location = new System.Drawing.Point(26, 105);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 22);
             this.label11.TabIndex = 20;

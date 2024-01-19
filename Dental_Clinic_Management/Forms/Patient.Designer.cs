@@ -51,7 +51,6 @@
             this.patAddress = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.patGender = new System.Windows.Forms.TextBox();
             this.patPhone = new System.Windows.Forms.TextBox();
             this.patName = new System.Windows.Forms.TextBox();
             this.patSaveButton = new System.Windows.Forms.Button();
@@ -63,6 +62,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.patGenderCommoBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -260,12 +260,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.patGenderCommoBox);
             this.panel2.Controls.Add(this.patAllergies);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.patAddress);
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.patGender);
             this.panel2.Controls.Add(this.patPhone);
             this.panel2.Controls.Add(this.patName);
             this.panel2.Controls.Add(this.patSaveButton);
@@ -333,15 +333,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(769, 223);
             this.dataGridView1.TabIndex = 10;
             // 
-            // patGender
-            // 
-            this.patGender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.patGender.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patGender.Location = new System.Drawing.Point(573, 98);
-            this.patGender.Name = "patGender";
-            this.patGender.Size = new System.Drawing.Size(172, 30);
-            this.patGender.TabIndex = 28;
-            // 
             // patPhone
             // 
             this.patPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -372,6 +363,7 @@
             this.patSaveButton.TabIndex = 25;
             this.patSaveButton.Text = "Save";
             this.patSaveButton.UseVisualStyleBackColor = false;
+            this.patSaveButton.Click += new System.EventHandler(this.patSaveButton_Click);
             // 
             // patDateTimePicker
             // 
@@ -465,6 +457,18 @@
             this.dataGridView2.Size = new System.Drawing.Size(769, 215);
             this.dataGridView2.TabIndex = 12;
             // 
+            // patGenderCommoBox
+            // 
+            this.patGenderCommoBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patGenderCommoBox.FormattingEnabled = true;
+            this.patGenderCommoBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.patGenderCommoBox.Location = new System.Drawing.Point(573, 95);
+            this.patGenderCommoBox.Name = "patGenderCommoBox";
+            this.patGenderCommoBox.Size = new System.Drawing.Size(172, 34);
+            this.patGenderCommoBox.TabIndex = 33;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -520,7 +524,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox patPhone;
-        private System.Windows.Forms.TextBox patGender;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -534,5 +537,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox patAllergies;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox patGenderCommoBox;
     }
 }

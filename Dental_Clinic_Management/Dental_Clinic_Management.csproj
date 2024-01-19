@@ -319,11 +319,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\ConnectionString.cs" />
-    <Compile Include="DentalClinicDbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DentalClinicDbDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -409,17 +404,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="DentalClinicDbDataSet.xsc">
-      <DependentUpon>DentalClinicDbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DentalClinicDbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DentalClinicDbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DentalClinicDbDataSet.xss">
-      <DependentUpon>DentalClinicDbDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -448,15 +432,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\users.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DentalClinicDb.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DentalClinicDb_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DentalClinicDb.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
