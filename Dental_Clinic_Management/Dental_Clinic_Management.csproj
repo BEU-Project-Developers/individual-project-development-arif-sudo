@@ -369,6 +369,7 @@
     </Compile>
     <Compile Include="ImageProcess\ImageProcessor.cs" />
     <Compile Include="My\MyPatient.cs" />
+    <Compile Include="My\MyTreatment.cs" />
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

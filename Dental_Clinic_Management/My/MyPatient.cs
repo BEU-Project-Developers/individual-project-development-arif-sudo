@@ -14,36 +14,35 @@ namespace Dental_Clinic_Management.My
 {
     public class MyPatient
     {
-        public void AddPatient(string name, string phone, string address, DateTime dob, string gender, string allergies ) {
-            try
-            {
-                string query = "INSERT INTO PatientTable (PatName, PatPhone, PatAddress, PatDob, PatGender, PatAllergies) " +
-               "values(@Name, @Phone, @Address, @Dateofbirth, @Gender, @Allergies)"; // query to add new patient to database
-              
-                ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
-                using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Name", name);
-                        command.Parameters.AddWithValue("@Phone", phone);
-                        command.Parameters.AddWithValue("@Address", address);
-                        command.Parameters.AddWithValue("@DateOfBirth", dob);
-                        command.Parameters.AddWithValue("@Gender", gender);
-                        command.Parameters.AddWithValue("@Allergies", allergies);
+        public void AddPatient(string name, string phone, string address, DateTime dob, string gender, string allergies)
+        {
 
-                        command.ExecuteNonQuery(); // returns the number of rows affected
-                        connection.Close(); // not necessary, because using statement automatically closes it after execution
-                    }
+            string query = "INSERT INTO PatientTable (PatName, PatPhone, PatAddress, PatDob, PatGender, PatAllergies) " +
+           "values(@Name, @Phone, @Address, @Dateofbirth, @Gender, @Allergies)"; // query to add new patient to database
+
+            ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
+            using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Address", address);
+                    command.Parameters.AddWithValue("@DateOfBirth", dob);
+                    command.Parameters.AddWithValue("@Gender", gender);
+                    command.Parameters.AddWithValue("@Allergies", allergies);
+
+                    command.ExecuteNonQuery(); // returns the number of rows affected
+                    connection.Close(); // not necessary, because using statement automatically closes it after execution
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            } 
         }
-        public void DeletePatient(string query) {
+
+
+        public void DeletePatient(string query)
+        {
+
             ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
@@ -54,43 +53,41 @@ namespace Dental_Clinic_Management.My
                 }
             }
         }
+
+
         public void UpdatePatient(string name, string phone, string address, DateTime dob, string gender, string allergies, int key)
         {
-            try
+
+            string query = "UPDATE PatientTable " +
+           "SET PatName = @Name, " +
+           "    PatPhone = @Phone, " +
+           "    PatAddress = @Address, " +
+           "    PatDob = @DateOfBirth, " +
+           "    PatGender = @Gender, " +
+           "    PatAllergies = @Allergies " +
+           "WHERE PatId = @Key"; // query to edit selected patient 
+
+            ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
+            using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
             {
-                string query = "UPDATE PatientTable " +
-               "SET PatName = @Name, " +
-               "    PatPhone = @Phone, " +
-               "    PatAddress = @Address, " +
-               "    PatDob = @DateOfBirth, " +
-               "    PatGender = @Gender, " +
-               "    PatAllergies = @Allergies " +
-               "WHERE PatId = @PatId"; // query to edit selected patient 
-
-                ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
-                using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Name", name);
-                        command.Parameters.AddWithValue("@Phone", phone);
-                        command.Parameters.AddWithValue("@Address", address);
-                        command.Parameters.AddWithValue("@DateOfBirth", dob);
-                        command.Parameters.AddWithValue("@Gender", gender);
-                        command.Parameters.AddWithValue("@Allergies", allergies);
-                        command.Parameters.AddWithValue("@PatId", key);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Phone", phone);
+                    command.Parameters.AddWithValue("@Address", address);
+                    command.Parameters.AddWithValue("@DateOfBirth", dob);
+                    command.Parameters.AddWithValue("@Gender", gender);
+                    command.Parameters.AddWithValue("@Allergies", allergies);
+                    command.Parameters.AddWithValue("@Key", key);
 
-                        command.ExecuteNonQuery(); // returns the number of rows affected
-                        connection.Close(); // not necessary, because using statement automatically closes it after execution
-                    }
+                    command.ExecuteNonQuery(); // returns the number of rows affected
+                    connection.Close(); // not necessary, because using statement automatically closes it after execution
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
+
+
 
         public DataSet ShowPatient(string query)
         {
@@ -104,11 +101,8 @@ namespace Dental_Clinic_Management.My
                     DataSet ds = new DataSet();
                     adapter.Fill(ds);
                     return ds;
-                    
                 }
-
             }
-
         }
     }
 }

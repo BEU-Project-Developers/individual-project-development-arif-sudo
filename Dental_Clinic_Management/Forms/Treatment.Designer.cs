@@ -45,18 +45,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.treatmentDGV = new System.Windows.Forms.DataGridView();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.treatCost = new System.Windows.Forms.TextBox();
+            this.treatDesc = new System.Windows.Forms.TextBox();
+            this.treatName = new System.Windows.Forms.TextBox();
+            this.treatSaveButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.treatEditButton = new System.Windows.Forms.Button();
+            this.treatDeleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -65,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treatmentDGV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -252,23 +254,29 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView2
+            // treatmentDGV
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(324, 389);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(769, 215);
-            this.dataGridView2.TabIndex = 16;
+            this.treatmentDGV.AllowUserToResizeColumns = false;
+            this.treatmentDGV.AllowUserToResizeRows = false;
+            this.treatmentDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.treatmentDGV.BackgroundColor = System.Drawing.Color.White;
+            this.treatmentDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.treatmentDGV.Location = new System.Drawing.Point(344, 381);
+            this.treatmentDGV.Name = "treatmentDGV";
+            this.treatmentDGV.RowHeadersVisible = false;
+            this.treatmentDGV.RowHeadersWidth = 51;
+            this.treatmentDGV.RowTemplate.Height = 24;
+            this.treatmentDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.treatmentDGV.Size = new System.Drawing.Size(769, 215);
+            this.treatmentDGV.TabIndex = 16;
+            this.treatmentDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.treatmentDGV_CellContentClick);
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(607, 339);
+            this.maskedTextBox1.Location = new System.Drawing.Point(627, 331);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
             this.maskedTextBox1.TabIndex = 15;
@@ -277,15 +285,18 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.treatEditButton);
+            this.panel2.Controls.Add(this.treatDeleteButton);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.treatCost);
+            this.panel2.Controls.Add(this.treatDesc);
+            this.panel2.Controls.Add(this.treatName);
+            this.panel2.Controls.Add(this.treatSaveButton);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(324, 57);
+            this.panel2.Location = new System.Drawing.Point(344, 49);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 259);
             this.panel2.TabIndex = 14;
@@ -301,46 +312,47 @@
             this.dataGridView1.Size = new System.Drawing.Size(769, 223);
             this.dataGridView1.TabIndex = 10;
             // 
-            // textBox3
+            // treatCost
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(135, 95);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 30);
-            this.textBox3.TabIndex = 28;
+            this.treatCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.treatCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatCost.Location = new System.Drawing.Point(135, 95);
+            this.treatCost.Name = "treatCost";
+            this.treatCost.Size = new System.Drawing.Size(182, 30);
+            this.treatCost.TabIndex = 28;
             // 
-            // textBox2
+            // treatDesc
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(556, 26);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 99);
-            this.textBox2.TabIndex = 27;
+            this.treatDesc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.treatDesc.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatDesc.Location = new System.Drawing.Point(556, 26);
+            this.treatDesc.Multiline = true;
+            this.treatDesc.Name = "treatDesc";
+            this.treatDesc.Size = new System.Drawing.Size(182, 99);
+            this.treatDesc.TabIndex = 27;
             // 
-            // textBox1
+            // treatName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(135, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 30);
-            this.textBox1.TabIndex = 26;
+            this.treatName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.treatName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatName.Location = new System.Drawing.Point(135, 32);
+            this.treatName.Name = "treatName";
+            this.treatName.Size = new System.Drawing.Size(182, 30);
+            this.treatName.TabIndex = 26;
             // 
-            // button1
+            // treatSaveButton
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(321, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.treatSaveButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.treatSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.treatSaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatSaveButton.ForeColor = System.Drawing.Color.White;
+            this.treatSaveButton.Location = new System.Drawing.Point(177, 198);
+            this.treatSaveButton.Name = "treatSaveButton";
+            this.treatSaveButton.Size = new System.Drawing.Size(134, 40);
+            this.treatSaveButton.TabIndex = 25;
+            this.treatSaveButton.Text = "Save";
+            this.treatSaveButton.UseVisualStyleBackColor = false;
+            this.treatSaveButton.Click += new System.EventHandler(this.treatSaveButton_Click);
             // 
             // label13
             // 
@@ -389,13 +401,41 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Treatments";
             // 
+            // treatEditButton
+            // 
+            this.treatEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.treatEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.treatEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatEditButton.ForeColor = System.Drawing.Color.White;
+            this.treatEditButton.Location = new System.Drawing.Point(480, 198);
+            this.treatEditButton.Name = "treatEditButton";
+            this.treatEditButton.Size = new System.Drawing.Size(134, 40);
+            this.treatEditButton.TabIndex = 37;
+            this.treatEditButton.Text = "Edit";
+            this.treatEditButton.UseVisualStyleBackColor = false;
+            this.treatEditButton.Click += new System.EventHandler(this.treatEditButton_Click);
+            // 
+            // treatDeleteButton
+            // 
+            this.treatDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.treatDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.treatDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.treatDeleteButton.Location = new System.Drawing.Point(330, 198);
+            this.treatDeleteButton.Name = "treatDeleteButton";
+            this.treatDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.treatDeleteButton.TabIndex = 36;
+            this.treatDeleteButton.Text = "Delete";
+            this.treatDeleteButton.UseVisualStyleBackColor = false;
+            this.treatDeleteButton.Click += new System.EventHandler(this.treatDeleteButton_Click);
+            // 
             // Treatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.treatmentDGV);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -404,6 +444,7 @@
             this.Name = "Treatment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Treatment";
+            this.Load += new System.EventHandler(this.Treatment_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -413,7 +454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treatmentDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -440,17 +481,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView treatmentDGV;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox treatCost;
+        private System.Windows.Forms.TextBox treatDesc;
+        private System.Windows.Forms.TextBox treatName;
+        private System.Windows.Forms.Button treatSaveButton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button treatEditButton;
+        private System.Windows.Forms.Button treatDeleteButton;
     }
 }
