@@ -318,6 +318,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\ConnectionString.cs" />
     <Compile Include="DentalClinicDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -372,6 +373,7 @@
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageProcess\ImageProcessor.cs" />
+    <Compile Include="My\MyPatient.cs" />
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
