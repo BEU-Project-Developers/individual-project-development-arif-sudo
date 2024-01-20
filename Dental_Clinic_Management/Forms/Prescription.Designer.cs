@@ -47,6 +47,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.prescriptionDGV = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.prescTreatment = new System.Windows.Forms.TextBox();
+            this.prescEditButton = new System.Windows.Forms.Button();
+            this.prescDeleteButton = new System.Windows.Forms.Button();
             this.prescMedicines = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.prescQuantity = new System.Windows.Forms.TextBox();
@@ -61,9 +64,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.prescEditButton = new System.Windows.Forms.Button();
-            this.prescDeleteButton = new System.Windows.Forms.Button();
-            this.prescTreatment = new System.Windows.Forms.TextBox();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.prescSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
@@ -253,7 +253,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::Dental_Clinic_Management.Properties.Resources.rounded_tooth;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 100);
@@ -303,6 +303,44 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 300);
             this.panel2.TabIndex = 14;
+            // 
+            // prescTreatment
+            // 
+            this.prescTreatment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescTreatment.Enabled = false;
+            this.prescTreatment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescTreatment.Location = new System.Drawing.Point(133, 97);
+            this.prescTreatment.Name = "prescTreatment";
+            this.prescTreatment.Size = new System.Drawing.Size(172, 30);
+            this.prescTreatment.TabIndex = 38;
+            // 
+            // prescEditButton
+            // 
+            this.prescEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.prescEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescEditButton.ForeColor = System.Drawing.Color.White;
+            this.prescEditButton.Location = new System.Drawing.Point(470, 248);
+            this.prescEditButton.Name = "prescEditButton";
+            this.prescEditButton.Size = new System.Drawing.Size(134, 40);
+            this.prescEditButton.TabIndex = 37;
+            this.prescEditButton.Text = "Edit";
+            this.prescEditButton.UseVisualStyleBackColor = false;
+            this.prescEditButton.Click += new System.EventHandler(this.prescEditButton_Click);
+            // 
+            // prescDeleteButton
+            // 
+            this.prescDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.prescDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.prescDeleteButton.Location = new System.Drawing.Point(320, 248);
+            this.prescDeleteButton.Name = "prescDeleteButton";
+            this.prescDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.prescDeleteButton.TabIndex = 36;
+            this.prescDeleteButton.Text = "Delete";
+            this.prescDeleteButton.UseVisualStyleBackColor = false;
+            this.prescDeleteButton.Click += new System.EventHandler(this.prescDeleteButton_Click);
             // 
             // prescMedicines
             // 
@@ -460,44 +498,6 @@
             this.label9.Size = new System.Drawing.Size(161, 33);
             this.label9.TabIndex = 13;
             this.label9.Text = "Prescriptions";
-            // 
-            // prescEditButton
-            // 
-            this.prescEditButton.BackColor = System.Drawing.Color.LightSlateGray;
-            this.prescEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prescEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescEditButton.ForeColor = System.Drawing.Color.White;
-            this.prescEditButton.Location = new System.Drawing.Point(470, 248);
-            this.prescEditButton.Name = "prescEditButton";
-            this.prescEditButton.Size = new System.Drawing.Size(134, 40);
-            this.prescEditButton.TabIndex = 37;
-            this.prescEditButton.Text = "Edit";
-            this.prescEditButton.UseVisualStyleBackColor = false;
-            this.prescEditButton.Click += new System.EventHandler(this.prescEditButton_Click);
-            // 
-            // prescDeleteButton
-            // 
-            this.prescDeleteButton.BackColor = System.Drawing.Color.Crimson;
-            this.prescDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.prescDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescDeleteButton.ForeColor = System.Drawing.Color.White;
-            this.prescDeleteButton.Location = new System.Drawing.Point(320, 248);
-            this.prescDeleteButton.Name = "prescDeleteButton";
-            this.prescDeleteButton.Size = new System.Drawing.Size(134, 40);
-            this.prescDeleteButton.TabIndex = 36;
-            this.prescDeleteButton.Text = "Delete";
-            this.prescDeleteButton.UseVisualStyleBackColor = false;
-            this.prescDeleteButton.Click += new System.EventHandler(this.prescDeleteButton_Click);
-            // 
-            // prescTreatment
-            // 
-            this.prescTreatment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.prescTreatment.Enabled = false;
-            this.prescTreatment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescTreatment.Location = new System.Drawing.Point(133, 97);
-            this.prescTreatment.Name = "prescTreatment";
-            this.prescTreatment.Size = new System.Drawing.Size(172, 30);
-            this.prescTreatment.TabIndex = 38;
             // 
             // maskedTextBox2
             // 

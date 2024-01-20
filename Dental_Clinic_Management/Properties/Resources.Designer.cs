@@ -59,5 +59,15 @@ namespace Dental_Clinic_Management.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rounded_tooth {
+            get {
+                object obj = ResourceManager.GetObject("rounded_tooth", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
