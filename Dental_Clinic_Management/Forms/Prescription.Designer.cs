@@ -277,6 +277,7 @@
             this.prescriptionDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.prescriptionDGV.Size = new System.Drawing.Size(769, 193);
             this.prescriptionDGV.TabIndex = 16;
+            this.prescriptionDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prescriptionDGV_CellContentClick);
             // 
             // maskedTextBox1
             // 
@@ -483,6 +484,7 @@
             this.prescEditButton.TabIndex = 37;
             this.prescEditButton.Text = "Edit";
             this.prescEditButton.UseVisualStyleBackColor = false;
+            this.prescEditButton.Click += new System.EventHandler(this.prescEditButton_Click);
             // 
             // prescDeleteButton
             // 
@@ -496,6 +498,7 @@
             this.prescDeleteButton.TabIndex = 36;
             this.prescDeleteButton.Text = "Delete";
             this.prescDeleteButton.UseVisualStyleBackColor = false;
+            this.prescDeleteButton.Click += new System.EventHandler(this.prescDeleteButton_Click);
             // 
             // prescTreatment
             // 

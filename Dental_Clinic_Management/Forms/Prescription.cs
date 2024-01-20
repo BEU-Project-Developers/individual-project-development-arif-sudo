@@ -160,6 +160,22 @@ namespace Dental_Clinic_Management.Forms
             this.GetPatientName();
             this.GetTreatment();
             this.GetPrice();
+            this.Populate_PrescriptionDGV();
+        }
+
+        private void Populate_PrescriptionDGV()
+        {
+            try
+            {
+                string query = "SELECT * FROM PrescriptionTable";
+                DataSet ds = prescription.ShowPrescription(query);
+                prescriptionDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void prescSaveButton_Click(object sender, EventArgs e)
@@ -168,13 +184,97 @@ namespace Dental_Clinic_Management.Forms
             {
                 string name = prescName.Text;
                 string treatment = prescTreatment.Text;
-                string cost = prescCost.Text;
+                int cost = Convert.ToInt32(prescCost.Text);
                 string medicines = prescMedicines.Text;
-                string quantity = prescQuantity.Text;
+                int quantity = Convert.ToInt32(prescQuantity.Text);
 
-                //patient.AddPatient(name, phone, address, dateOfBirth, gender, allergies);
-                //MessageBox.Show("Prescripiton added succesfully");
-                //this.Populate_PatientDGV();
+                prescription.AddPrescription(name, treatment, cost, medicines, quantity);
+                MessageBox.Show("Prescripiton added succesfully");
+                this.Populate_PrescriptionDGV();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void prescDeleteButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (key == 0)
+                {
+                    MessageBox.Show("Please select prescription to delete");
+                }
+                else
+                {
+                    string query = "DELETE FROM PrescriptionTable WHERE PrescId=" + key + "";
+                    prescription.DeletePrescription(query);
+                    MessageBox.Show("Prescription deleted succesfully");
+                    prescName.Text = "";
+                    prescTreatment.Text = "";
+                    prescCost.Text = "";
+                    prescMedicines.Text = "";
+                    prescQuantity.Text = "";
+                    prescPatComboBox.SelectedValue = "";
+                    this.Populate_PrescriptionDGV();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+        private void prescEditButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = prescName.Text;
+                string treatment = prescTreatment.Text;
+                int cost = Convert.ToInt32(prescCost.Text);
+                string medicines = prescMedicines.Text;
+                int quantity = Convert.ToInt32(prescQuantity.Text);
+
+                if (key == 0)
+                {
+                    MessageBox.Show("Select prescription to update");
+                }
+                else
+                {
+                    prescription.UpdatePatient(name, treatment, cost, medicines, quantity, key);
+                  
+                    MessageBox.Show("Prescription updated succesfully");
+                    this.Populate_PrescriptionDGV();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+
+        private void prescriptionDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                prescName.Text = prescriptionDGV.SelectedRows[0].Cells[1].Value.ToString();
+                prescTreatment.Text = prescriptionDGV.SelectedRows[0].Cells[2].Value.ToString();
+                prescCost.Text = prescriptionDGV.SelectedRows[0].Cells[3].Value.ToString();
+                prescMedicines.Text = prescriptionDGV.SelectedRows[0].Cells[4].Value.ToString();
+                prescQuantity.Text = prescriptionDGV.SelectedRows[0].Cells[5].Value.ToString();
+                prescPatComboBox.SelectedItem = prescriptionDGV.SelectedRows[0].Cells[0].Value.ToString() + " - " + prescName.Text;
+
+                if (prescName.Text == "" || prescName.Text == "No data available")
+                {
+                    key = 0;
+                }
+                else
+                {
+                    key = Convert.ToInt32(prescriptionDGV.SelectedRows[0].Cells[0].Value.ToString());
+                }
             }
             catch (Exception ex)
             {
