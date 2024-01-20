@@ -16,5 +16,10 @@ namespace Dental_Clinic_Management.Forms
         {
             InitializeComponent();
         }
+
+        private void prescSaveButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

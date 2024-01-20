@@ -45,24 +45,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.prescriptionDGV = new System.Windows.Forms.DataGridView();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.prescMedicines = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.prescQuantity = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.prescPatientComboBox = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.prescTreatmentComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.prescCost = new System.Windows.Forms.TextBox();
+            this.prescName = new System.Windows.Forms.TextBox();
+            this.prescSaveButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.prescEditButton = new System.Windows.Forms.Button();
+            this.prescDeleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -71,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prescriptionDGV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -258,23 +260,30 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView2
+            // prescriptionDGV
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(317, 389);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(769, 215);
-            this.dataGridView2.TabIndex = 16;
+            this.prescriptionDGV.AllowUserToAddRows = false;
+            this.prescriptionDGV.AllowUserToDeleteRows = false;
+            this.prescriptionDGV.AllowUserToResizeColumns = false;
+            this.prescriptionDGV.AllowUserToResizeRows = false;
+            this.prescriptionDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.prescriptionDGV.BackgroundColor = System.Drawing.Color.White;
+            this.prescriptionDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.prescriptionDGV.Location = new System.Drawing.Point(346, 411);
+            this.prescriptionDGV.Name = "prescriptionDGV";
+            this.prescriptionDGV.RowHeadersVisible = false;
+            this.prescriptionDGV.RowHeadersWidth = 51;
+            this.prescriptionDGV.RowTemplate.Height = 24;
+            this.prescriptionDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.prescriptionDGV.Size = new System.Drawing.Size(769, 193);
+            this.prescriptionDGV.TabIndex = 16;
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(601, 356);
+            this.maskedTextBox1.Location = new System.Drawing.Point(632, 373);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
             this.maskedTextBox1.TabIndex = 15;
@@ -283,34 +292,37 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.prescEditButton);
+            this.panel2.Controls.Add(this.prescDeleteButton);
+            this.panel2.Controls.Add(this.prescMedicines);
             this.panel2.Controls.Add(this.label15);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.prescQuantity);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.prescPatientComboBox);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.prescTreatmentComboBox);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.prescCost);
+            this.panel2.Controls.Add(this.prescName);
+            this.panel2.Controls.Add(this.prescSaveButton);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(317, 57);
+            this.panel2.Location = new System.Drawing.Point(346, 57);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(769, 280);
+            this.panel2.Size = new System.Drawing.Size(769, 300);
             this.panel2.TabIndex = 14;
             // 
-            // textBox4
+            // prescMedicines
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(573, 158);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 75);
-            this.textBox4.TabIndex = 35;
+            this.prescMedicines.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescMedicines.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescMedicines.Location = new System.Drawing.Point(573, 158);
+            this.prescMedicines.Multiline = true;
+            this.prescMedicines.Name = "prescMedicines";
+            this.prescMedicines.Size = new System.Drawing.Size(172, 75);
+            this.prescMedicines.TabIndex = 35;
             // 
             // label15
             // 
@@ -324,14 +336,14 @@
             this.label15.TabIndex = 34;
             this.label15.Text = "Medicines";
             // 
-            // textBox2
+            // prescQuantity
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 164);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 30);
-            this.textBox2.TabIndex = 33;
+            this.prescQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescQuantity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescQuantity.Location = new System.Drawing.Point(133, 164);
+            this.prescQuantity.Name = "prescQuantity";
+            this.prescQuantity.Size = new System.Drawing.Size(172, 30);
+            this.prescQuantity.TabIndex = 33;
             // 
             // label14
             // 
@@ -345,14 +357,14 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Quantity";
             // 
-            // comboBox1
+            // prescPatientComboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(573, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 34);
-            this.comboBox1.TabIndex = 31;
+            this.prescPatientComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescPatientComboBox.FormattingEnabled = true;
+            this.prescPatientComboBox.Location = new System.Drawing.Point(573, 28);
+            this.prescPatientComboBox.Name = "prescPatientComboBox";
+            this.prescPatientComboBox.Size = new System.Drawing.Size(172, 34);
+            this.prescPatientComboBox.TabIndex = 31;
             // 
             // label12
             // 
@@ -366,14 +378,14 @@
             this.label12.TabIndex = 30;
             this.label12.Text = "Patient";
             // 
-            // comboBox2
+            // prescTreatmentComboBox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 101);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 34);
-            this.comboBox2.TabIndex = 29;
+            this.prescTreatmentComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescTreatmentComboBox.FormattingEnabled = true;
+            this.prescTreatmentComboBox.Location = new System.Drawing.Point(133, 101);
+            this.prescTreatmentComboBox.Name = "prescTreatmentComboBox";
+            this.prescTreatmentComboBox.Size = new System.Drawing.Size(172, 34);
+            this.prescTreatmentComboBox.TabIndex = 29;
             // 
             // dataGridView1
             // 
@@ -386,36 +398,37 @@
             this.dataGridView1.Size = new System.Drawing.Size(769, 223);
             this.dataGridView1.TabIndex = 10;
             // 
-            // textBox3
+            // prescCost
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(573, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 30);
-            this.textBox3.TabIndex = 28;
+            this.prescCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescCost.Location = new System.Drawing.Point(573, 97);
+            this.prescCost.Name = "prescCost";
+            this.prescCost.Size = new System.Drawing.Size(172, 30);
+            this.prescCost.TabIndex = 28;
             // 
-            // textBox1
+            // prescName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 30);
-            this.textBox1.TabIndex = 26;
+            this.prescName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescName.Location = new System.Drawing.Point(133, 32);
+            this.prescName.Name = "prescName";
+            this.prescName.Size = new System.Drawing.Size(172, 30);
+            this.prescName.TabIndex = 26;
             // 
-            // button1
+            // prescSaveButton
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(317, 218);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.prescSaveButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.prescSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescSaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescSaveButton.ForeColor = System.Drawing.Color.White;
+            this.prescSaveButton.Location = new System.Drawing.Point(171, 248);
+            this.prescSaveButton.Name = "prescSaveButton";
+            this.prescSaveButton.Size = new System.Drawing.Size(134, 40);
+            this.prescSaveButton.TabIndex = 25;
+            this.prescSaveButton.Text = "Save";
+            this.prescSaveButton.UseVisualStyleBackColor = false;
+            this.prescSaveButton.Click += new System.EventHandler(this.prescSaveButton_Click);
             // 
             // label13
             // 
@@ -458,11 +471,37 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(331, 13);
+            this.label9.Location = new System.Drawing.Point(340, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(161, 33);
             this.label9.TabIndex = 13;
             this.label9.Text = "Prescriptions";
+            // 
+            // prescEditButton
+            // 
+            this.prescEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.prescEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescEditButton.ForeColor = System.Drawing.Color.White;
+            this.prescEditButton.Location = new System.Drawing.Point(470, 248);
+            this.prescEditButton.Name = "prescEditButton";
+            this.prescEditButton.Size = new System.Drawing.Size(134, 40);
+            this.prescEditButton.TabIndex = 37;
+            this.prescEditButton.Text = "Edit";
+            this.prescEditButton.UseVisualStyleBackColor = false;
+            // 
+            // prescDeleteButton
+            // 
+            this.prescDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.prescDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.prescDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.prescDeleteButton.Location = new System.Drawing.Point(320, 248);
+            this.prescDeleteButton.Name = "prescDeleteButton";
+            this.prescDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.prescDeleteButton.TabIndex = 36;
+            this.prescDeleteButton.Text = "Delete";
+            this.prescDeleteButton.UseVisualStyleBackColor = false;
             // 
             // Prescription
             // 
@@ -470,7 +509,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.prescriptionDGV);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -488,7 +527,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prescriptionDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -515,23 +554,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView prescriptionDGV;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox prescCost;
+        private System.Windows.Forms.TextBox prescName;
+        private System.Windows.Forms.Button prescSaveButton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox prescTreatmentComboBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox prescPatientComboBox;
+        private System.Windows.Forms.TextBox prescMedicines;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox prescQuantity;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button prescEditButton;
+        private System.Windows.Forms.Button prescDeleteButton;
     }
 }

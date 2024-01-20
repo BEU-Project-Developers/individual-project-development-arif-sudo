@@ -371,6 +371,7 @@
     <Compile Include="My\MyAppointment.cs" />
     <Compile Include="My\MyPatient.cs" />
     <Compile Include="My\MyTreatment.cs" />
+    <Compile Include="My\MyUser.cs" />
     <Compile Include="OvalPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>

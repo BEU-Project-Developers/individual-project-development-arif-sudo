@@ -45,18 +45,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.userDGV = new System.Windows.Forms.DataGridView();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.UPassword = new System.Windows.Forms.TextBox();
+            this.UPhone = new System.Windows.Forms.TextBox();
+            this.UName = new System.Windows.Forms.TextBox();
+            this.userSaveButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.userEditButton = new System.Windows.Forms.Button();
+            this.userDeleteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -65,7 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDGV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -252,23 +254,31 @@
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView2
+            // userDGV
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(318, 388);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(769, 215);
-            this.dataGridView2.TabIndex = 16;
+            this.userDGV.AllowUserToAddRows = false;
+            this.userDGV.AllowUserToDeleteRows = false;
+            this.userDGV.AllowUserToResizeColumns = false;
+            this.userDGV.AllowUserToResizeRows = false;
+            this.userDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.userDGV.BackgroundColor = System.Drawing.Color.White;
+            this.userDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.userDGV.Location = new System.Drawing.Point(347, 380);
+            this.userDGV.Name = "userDGV";
+            this.userDGV.RowHeadersVisible = false;
+            this.userDGV.RowHeadersWidth = 51;
+            this.userDGV.RowTemplate.Height = 24;
+            this.userDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.userDGV.Size = new System.Drawing.Size(769, 215);
+            this.userDGV.TabIndex = 16;
+            this.userDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDGV_CellContentClick);
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(601, 338);
+            this.maskedTextBox1.Location = new System.Drawing.Point(630, 330);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
             this.maskedTextBox1.TabIndex = 15;
@@ -278,15 +288,17 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.userEditButton);
+            this.panel2.Controls.Add(this.userDeleteButton);
             this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.UPassword);
+            this.panel2.Controls.Add(this.UPhone);
+            this.panel2.Controls.Add(this.UName);
+            this.panel2.Controls.Add(this.userSaveButton);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(318, 56);
+            this.panel2.Location = new System.Drawing.Point(347, 48);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 259);
             this.panel2.TabIndex = 14;
@@ -302,45 +314,46 @@
             this.dataGridView1.Size = new System.Drawing.Size(769, 223);
             this.dataGridView1.TabIndex = 10;
             // 
-            // textBox3
+            // UPassword
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(539, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 30);
-            this.textBox3.TabIndex = 28;
+            this.UPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPassword.Location = new System.Drawing.Point(539, 32);
+            this.UPassword.Name = "UPassword";
+            this.UPassword.Size = new System.Drawing.Size(172, 30);
+            this.UPassword.TabIndex = 28;
             // 
-            // textBox2
+            // UPhone
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(133, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 30);
-            this.textBox2.TabIndex = 27;
+            this.UPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UPhone.Location = new System.Drawing.Point(133, 107);
+            this.UPhone.Name = "UPhone";
+            this.UPhone.Size = new System.Drawing.Size(172, 30);
+            this.UPhone.TabIndex = 27;
             // 
-            // textBox1
+            // UName
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(133, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 30);
-            this.textBox1.TabIndex = 26;
+            this.UName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UName.Location = new System.Drawing.Point(133, 32);
+            this.UName.Name = "UName";
+            this.UName.Size = new System.Drawing.Size(172, 30);
+            this.UName.TabIndex = 26;
             // 
-            // button1
+            // userSaveButton
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(321, 194);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.userSaveButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.userSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userSaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSaveButton.ForeColor = System.Drawing.Color.White;
+            this.userSaveButton.Location = new System.Drawing.Point(177, 195);
+            this.userSaveButton.Name = "userSaveButton";
+            this.userSaveButton.Size = new System.Drawing.Size(134, 40);
+            this.userSaveButton.TabIndex = 25;
+            this.userSaveButton.Text = "Save";
+            this.userSaveButton.UseVisualStyleBackColor = false;
+            this.userSaveButton.Click += new System.EventHandler(this.userSaveButton_Click);
             // 
             // label13
             // 
@@ -383,11 +396,39 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(332, 12);
+            this.label9.Location = new System.Drawing.Point(341, 12);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 33);
             this.label9.TabIndex = 13;
             this.label9.Text = "Users";
+            // 
+            // userEditButton
+            // 
+            this.userEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.userEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userEditButton.ForeColor = System.Drawing.Color.White;
+            this.userEditButton.Location = new System.Drawing.Point(475, 195);
+            this.userEditButton.Name = "userEditButton";
+            this.userEditButton.Size = new System.Drawing.Size(134, 40);
+            this.userEditButton.TabIndex = 37;
+            this.userEditButton.Text = "Edit";
+            this.userEditButton.UseVisualStyleBackColor = false;
+            this.userEditButton.Click += new System.EventHandler(this.userEditButton_Click);
+            // 
+            // userDeleteButton
+            // 
+            this.userDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.userDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.userDeleteButton.Location = new System.Drawing.Point(325, 195);
+            this.userDeleteButton.Name = "userDeleteButton";
+            this.userDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.userDeleteButton.TabIndex = 36;
+            this.userDeleteButton.Text = "Delete";
+            this.userDeleteButton.UseVisualStyleBackColor = false;
+            this.userDeleteButton.Click += new System.EventHandler(this.userDeleteButton_Click);
             // 
             // User
             // 
@@ -395,7 +436,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.userDGV);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -404,6 +445,7 @@
             this.Name = "User";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User";
+            this.Load += new System.EventHandler(this.User_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -413,7 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -440,17 +482,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView userDGV;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox UPassword;
+        private System.Windows.Forms.TextBox UPhone;
+        private System.Windows.Forms.TextBox UName;
+        private System.Windows.Forms.Button userSaveButton;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button userEditButton;
+        private System.Windows.Forms.Button userDeleteButton;
     }
 }
