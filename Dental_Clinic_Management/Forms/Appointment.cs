@@ -49,7 +49,7 @@ namespace Dental_Clinic_Management.Forms
                     dt.Columns.Add("PatName", typeof(string));
                     dt.Load(reader);
 
-                    aptTreatmentComboBox.DisplayMember = "PatName";  // Set DisplayMember
+                    aptPatientComboBox.DisplayMember = "PatName";  // Set DisplayMember
                     aptPatientComboBox.ValueMember = "PatName";
                     aptPatientComboBox.DataSource = dt;
                 }

@@ -52,9 +52,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.prescQuantity = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.prescPatientComboBox = new System.Windows.Forms.ComboBox();
+            this.prescPatComboBox = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.prescTreatmentComboBox = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.prescCost = new System.Windows.Forms.TextBox();
             this.prescName = new System.Windows.Forms.TextBox();
@@ -65,6 +64,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.prescEditButton = new System.Windows.Forms.Button();
             this.prescDeleteButton = new System.Windows.Forms.Button();
+            this.prescTreatment = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -293,15 +293,15 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.prescTreatment);
             this.panel2.Controls.Add(this.prescEditButton);
             this.panel2.Controls.Add(this.prescDeleteButton);
             this.panel2.Controls.Add(this.prescMedicines);
             this.panel2.Controls.Add(this.label15);
             this.panel2.Controls.Add(this.prescQuantity);
             this.panel2.Controls.Add(this.label14);
-            this.panel2.Controls.Add(this.prescPatientComboBox);
+            this.panel2.Controls.Add(this.prescPatComboBox);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.prescTreatmentComboBox);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.prescCost);
             this.panel2.Controls.Add(this.prescName);
@@ -357,14 +357,15 @@
             this.label14.TabIndex = 32;
             this.label14.Text = "Quantity";
             // 
-            // prescPatientComboBox
+            // prescPatComboBox
             // 
-            this.prescPatientComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescPatientComboBox.FormattingEnabled = true;
-            this.prescPatientComboBox.Location = new System.Drawing.Point(573, 28);
-            this.prescPatientComboBox.Name = "prescPatientComboBox";
-            this.prescPatientComboBox.Size = new System.Drawing.Size(172, 34);
-            this.prescPatientComboBox.TabIndex = 31;
+            this.prescPatComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescPatComboBox.FormattingEnabled = true;
+            this.prescPatComboBox.Location = new System.Drawing.Point(573, 28);
+            this.prescPatComboBox.Name = "prescPatComboBox";
+            this.prescPatComboBox.Size = new System.Drawing.Size(172, 34);
+            this.prescPatComboBox.TabIndex = 31;
+            this.prescPatComboBox.SelectionChangeCommitted += new System.EventHandler(this.prescPatComboBox_SelectionChangeCommitted);
             // 
             // label12
             // 
@@ -377,15 +378,6 @@
             this.label12.Size = new System.Drawing.Size(64, 22);
             this.label12.TabIndex = 30;
             this.label12.Text = "Patient";
-            // 
-            // prescTreatmentComboBox
-            // 
-            this.prescTreatmentComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescTreatmentComboBox.FormattingEnabled = true;
-            this.prescTreatmentComboBox.Location = new System.Drawing.Point(133, 101);
-            this.prescTreatmentComboBox.Name = "prescTreatmentComboBox";
-            this.prescTreatmentComboBox.Size = new System.Drawing.Size(172, 34);
-            this.prescTreatmentComboBox.TabIndex = 29;
             // 
             // dataGridView1
             // 
@@ -401,6 +393,7 @@
             // prescCost
             // 
             this.prescCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescCost.Enabled = false;
             this.prescCost.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescCost.Location = new System.Drawing.Point(573, 97);
             this.prescCost.Name = "prescCost";
@@ -410,6 +403,7 @@
             // prescName
             // 
             this.prescName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescName.Enabled = false;
             this.prescName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescName.Location = new System.Drawing.Point(133, 32);
             this.prescName.Name = "prescName";
@@ -503,6 +497,16 @@
             this.prescDeleteButton.Text = "Delete";
             this.prescDeleteButton.UseVisualStyleBackColor = false;
             // 
+            // prescTreatment
+            // 
+            this.prescTreatment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.prescTreatment.Enabled = false;
+            this.prescTreatment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescTreatment.Location = new System.Drawing.Point(133, 97);
+            this.prescTreatment.Name = "prescTreatment";
+            this.prescTreatment.Size = new System.Drawing.Size(172, 30);
+            this.prescTreatment.TabIndex = 38;
+            // 
             // Prescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -518,6 +522,7 @@
             this.Name = "Prescription";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prescription";
+            this.Load += new System.EventHandler(this.Prescription_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -565,14 +570,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox prescTreatmentComboBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox prescPatientComboBox;
+        private System.Windows.Forms.ComboBox prescPatComboBox;
         private System.Windows.Forms.TextBox prescMedicines;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox prescQuantity;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button prescEditButton;
         private System.Windows.Forms.Button prescDeleteButton;
+        private System.Windows.Forms.TextBox prescTreatment;
     }
 }
