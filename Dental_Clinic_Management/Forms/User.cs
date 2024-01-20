@@ -158,5 +158,12 @@ namespace Dental_Clinic_Management.Forms
             userSearchTextBox.Focus();
             
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
     }
 }
