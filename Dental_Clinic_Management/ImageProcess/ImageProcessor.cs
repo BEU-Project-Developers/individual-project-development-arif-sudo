@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ServiceModel.Channels;
 
 namespace Dental_Clinic_Management.ImageProcess
 {
@@ -30,9 +31,15 @@ namespace Dental_Clinic_Management.ImageProcess
         }
         public void ProcessImage(string imagePath, string outputPath, int cornerRadius, Color backgroundColor)
         {
-            Image startImage = Image.FromFile(imagePath);
-            Image roundedImage = RoundCorners(startImage, cornerRadius, backgroundColor);
-            roundedImage.Save(outputPath);
+            try
+            {
+                Image startImage = Image.FromFile(imagePath);
+                Image roundedImage = RoundCorners(startImage, cornerRadius, backgroundColor);
+                roundedImage.Save(outputPath);
+            }catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
     }
 }

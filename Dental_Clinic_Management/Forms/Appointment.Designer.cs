@@ -47,17 +47,19 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.aptEditButton = new System.Windows.Forms.Button();
+            this.aptDeleteButton = new System.Windows.Forms.Button();
+            this.aptSaveButton = new System.Windows.Forms.Button();
+            this.aptTime = new System.Windows.Forms.DateTimePicker();
+            this.aptDate = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.aptTreatmentComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.aptPatientComboBox = new System.Windows.Forms.ComboBox();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.aptDGV = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -67,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aptDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -257,7 +259,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(325, 22);
+            this.label9.Location = new System.Drawing.Point(334, 22);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(171, 33);
             this.label9.TabIndex = 6;
@@ -265,53 +267,84 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.aptEditButton);
+            this.panel2.Controls.Add(this.aptDeleteButton);
+            this.panel2.Controls.Add(this.aptSaveButton);
+            this.panel2.Controls.Add(this.aptTime);
+            this.panel2.Controls.Add(this.aptDate);
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.aptTreatmentComboBox);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.comboBox1);
-            this.panel2.Location = new System.Drawing.Point(319, 72);
+            this.panel2.Controls.Add(this.aptPatientComboBox);
+            this.panel2.Location = new System.Drawing.Point(340, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 259);
             this.panel2.TabIndex = 7;
             // 
-            // button1
+            // aptEditButton
             // 
-            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(321, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 40);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.aptEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.aptEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aptEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptEditButton.ForeColor = System.Drawing.Color.White;
+            this.aptEditButton.Location = new System.Drawing.Point(471, 198);
+            this.aptEditButton.Name = "aptEditButton";
+            this.aptEditButton.Size = new System.Drawing.Size(134, 40);
+            this.aptEditButton.TabIndex = 38;
+            this.aptEditButton.Text = "Edit";
+            this.aptEditButton.UseVisualStyleBackColor = false;
+            this.aptEditButton.Click += new System.EventHandler(this.aptEditButton_Click);
             // 
-            // dateTimePicker2
+            // aptDeleteButton
             // 
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(534, 106);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(172, 34);
-            this.dateTimePicker2.TabIndex = 24;
+            this.aptDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.aptDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aptDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.aptDeleteButton.Location = new System.Drawing.Point(321, 198);
+            this.aptDeleteButton.Name = "aptDeleteButton";
+            this.aptDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.aptDeleteButton.TabIndex = 37;
+            this.aptDeleteButton.Text = "Cancel";
+            this.aptDeleteButton.UseVisualStyleBackColor = false;
+            this.aptDeleteButton.Click += new System.EventHandler(this.aptDeleteButton_Click);
             // 
-            // dateTimePicker1
+            // aptSaveButton
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(534, 34);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 34);
-            this.dateTimePicker1.TabIndex = 23;
+            this.aptSaveButton.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.aptSaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aptSaveButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptSaveButton.ForeColor = System.Drawing.Color.White;
+            this.aptSaveButton.Location = new System.Drawing.Point(171, 198);
+            this.aptSaveButton.Name = "aptSaveButton";
+            this.aptSaveButton.Size = new System.Drawing.Size(134, 40);
+            this.aptSaveButton.TabIndex = 25;
+            this.aptSaveButton.Text = "Save";
+            this.aptSaveButton.UseVisualStyleBackColor = false;
+            this.aptSaveButton.Click += new System.EventHandler(this.aptSaveButton_Click);
+            // 
+            // aptTime
+            // 
+            this.aptTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.aptTime.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.aptTime.Location = new System.Drawing.Point(534, 106);
+            this.aptTime.Name = "aptTime";
+            this.aptTime.ShowUpDown = true;
+            this.aptTime.Size = new System.Drawing.Size(172, 34);
+            this.aptTime.TabIndex = 24;
+            // 
+            // aptDate
+            // 
+            this.aptDate.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.aptDate.Location = new System.Drawing.Point(534, 34);
+            this.aptDate.Name = "aptDate";
+            this.aptDate.ShowUpDown = true;
+            this.aptDate.Size = new System.Drawing.Size(172, 34);
+            this.aptDate.TabIndex = 23;
             // 
             // label13
             // 
@@ -349,14 +382,14 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Treatment";
             // 
-            // comboBox2
+            // aptTreatmentComboBox
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(133, 109);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 34);
-            this.comboBox2.TabIndex = 19;
+            this.aptTreatmentComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptTreatmentComboBox.FormattingEnabled = true;
+            this.aptTreatmentComboBox.Location = new System.Drawing.Point(133, 109);
+            this.aptTreatmentComboBox.Name = "aptTreatmentComboBox";
+            this.aptTreatmentComboBox.Size = new System.Drawing.Size(172, 34);
+            this.aptTreatmentComboBox.TabIndex = 19;
             // 
             // label10
             // 
@@ -370,37 +403,45 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Patient";
             // 
-            // comboBox1
+            // aptPatientComboBox
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(133, 34);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 34);
-            this.comboBox1.TabIndex = 0;
+            this.aptPatientComboBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptPatientComboBox.FormattingEnabled = true;
+            this.aptPatientComboBox.Location = new System.Drawing.Point(133, 34);
+            this.aptPatientComboBox.Name = "aptPatientComboBox";
+            this.aptPatientComboBox.Size = new System.Drawing.Size(172, 34);
+            this.aptPatientComboBox.TabIndex = 0;
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(598, 342);
+            this.maskedTextBox1.Location = new System.Drawing.Point(619, 348);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(216, 27);
             this.maskedTextBox1.TabIndex = 9;
-            this.maskedTextBox1.Text = "Filter By Username";
+            this.maskedTextBox1.Text = "Filter By Name";
             this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView2
+            // aptDGV
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(319, 390);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(769, 215);
-            this.dataGridView2.TabIndex = 13;
+            this.aptDGV.AllowUserToAddRows = false;
+            this.aptDGV.AllowUserToDeleteRows = false;
+            this.aptDGV.AllowUserToResizeColumns = false;
+            this.aptDGV.AllowUserToResizeRows = false;
+            this.aptDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.aptDGV.BackgroundColor = System.Drawing.Color.White;
+            this.aptDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aptDGV.Location = new System.Drawing.Point(340, 390);
+            this.aptDGV.Name = "aptDGV";
+            this.aptDGV.RowHeadersVisible = false;
+            this.aptDGV.RowHeadersWidth = 51;
+            this.aptDGV.RowTemplate.Height = 24;
+            this.aptDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.aptDGV.Size = new System.Drawing.Size(769, 215);
+            this.aptDGV.TabIndex = 13;
+            this.aptDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.aptDGV_CellContentClick);
             // 
             // Appointment
             // 
@@ -408,7 +449,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.aptDGV);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
@@ -429,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aptDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,15 +481,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox aptPatientComboBox;
+        private System.Windows.Forms.DateTimePicker aptTime;
+        private System.Windows.Forms.DateTimePicker aptDate;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox aptTreatmentComboBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -465,6 +505,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView aptDGV;
+        private System.Windows.Forms.Button aptEditButton;
+        private System.Windows.Forms.Button aptDeleteButton;
+        private System.Windows.Forms.Button aptSaveButton;
     }
 }

@@ -368,6 +368,7 @@
       <DependentUpon>User.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageProcess\ImageProcessor.cs" />
+    <Compile Include="My\MyAppointment.cs" />
     <Compile Include="My\MyPatient.cs" />
     <Compile Include="My\MyTreatment.cs" />
     <Compile Include="OvalPictureBox.cs">

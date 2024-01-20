@@ -113,7 +113,7 @@ namespace Dental_Clinic_Management.Forms
             {
                 if (key  == 0)
                 {
-                    MessageBox.Show("Please select treatment to delete");
+                    MessageBox.Show("Please select treatment to edit");
                 }
                 else
                 {

@@ -13,12 +13,13 @@ namespace Dental_Clinic_Management.My
 {
     public class MyTreatment
     {
+        public static ConnectionString MyConnection = new ConnectionString();// instantiating a new static ConnectionString class
         public void AddTreatment(string name, int cost, string description)
         {
             string query = "INSERT INTO TreatmentTable (TreatName, TreatCost, TreatDesc) " +
              "values(@Name, @Cost, @Description)"; // query to add new treatment to the database
 
-            ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
+            
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetConnectionString method of ConnectionString class to access connection string
             {
                 connection.Open();
@@ -35,7 +36,6 @@ namespace Dental_Clinic_Management.My
         }
         public void DeleteTreatment(string query)
         {
-            ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
                 connection.Open();
@@ -52,7 +52,6 @@ namespace Dental_Clinic_Management.My
                     "TreatCost = @Cost, " +
                     "TreatDesc = @Description " +
                     "Where TreatId = @Key";
-            ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
                 connection.Open();
@@ -68,8 +67,6 @@ namespace Dental_Clinic_Management.My
         }
         public DataSet ShowTreatment(string query)
         {
-
-            ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
                 connection.Open();
