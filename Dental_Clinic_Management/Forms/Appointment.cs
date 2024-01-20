@@ -33,9 +33,9 @@ namespace Dental_Clinic_Management.Forms
 
         public static ConnectionString MyConnection = new ConnectionString();
         public static MyAppointment appointment = new MyAppointment();
+        public static int key = 0;
         // static keyword used to create variable with access within entire class
 
-        int key = 0;
         private void fillPatient()
         {
             try
@@ -133,7 +133,7 @@ namespace Dental_Clinic_Management.Forms
                 {
                     string query = "DELETE FROM AppointmentTable WHERE AptId=" + key + "";
                     appointment.DeleteAppointment(query);
-                    MessageBox.Show("Appointment deleted succesfully");
+                    MessageBox.Show("Appointment canceled succesfully");
                     aptPatientComboBox.SelectedValue = "";
                     aptTreatmentComboBox.SelectedValue = "";
                     this.Populate_Appointment();

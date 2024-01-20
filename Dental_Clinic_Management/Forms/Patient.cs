@@ -20,7 +20,7 @@ namespace Dental_Clinic_Management.Forms
         {
             InitializeComponent();
         }
-        int key = 0; // key here represents PatId in database // later we can use key to delete columns 
+        public static int key = 0; // key here represents PatId in database // later we can use key to delete columns 
         public static MyPatient patient = new MyPatient(); // instantiating a new MyPatient class
         private void patSaveButton_Click(object sender, EventArgs e)
         {

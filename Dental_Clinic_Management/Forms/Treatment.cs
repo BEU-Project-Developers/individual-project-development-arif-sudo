@@ -17,12 +17,12 @@ namespace Dental_Clinic_Management.Forms
         {
             InitializeComponent();
         }
-
+        public static MyTreatment treatment = new MyTreatment();
+        public static int key = 0;
         private void treatSaveButton_Click(object sender, EventArgs e)
         {
             try
-            {
-                MyTreatment treatment = new MyTreatment();
+            {   
                 string name = treatName.Text;
                 int cost = Convert.ToInt32(treatCost.Text);
                 string description = treatDesc.Text;
@@ -36,12 +36,10 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
-        int key = 0;
         private void treatDeleteButton_Click(object sender, EventArgs e)
         {
             try
             {
-                MyTreatment treatment = new MyTreatment();
                 if (key  == 0)
                 {
                     MessageBox.Show("Please select treatment to delete");
@@ -91,7 +89,6 @@ namespace Dental_Clinic_Management.Forms
         {
             try
             {
-                MyTreatment treatment = new MyTreatment();
                 string query = "SELECT * FROM TreatmentTable";
                 DataSet ds = treatment.ShowTreatment(query);
                 treatmentDGV.DataSource = ds.Tables[0];
@@ -117,7 +114,6 @@ namespace Dental_Clinic_Management.Forms
                 }
                 else
                 {
-                    MyTreatment treatment = new MyTreatment();
                     string name = treatName.Text;
                     int cost = Convert.ToInt32(treatCost.Text);
                     string description = treatDesc.Text;

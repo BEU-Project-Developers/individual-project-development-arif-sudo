@@ -14,13 +14,13 @@ namespace Dental_Clinic_Management.My
 {
     public class MyPatient
     {
+        public static ConnectionString MyConnection = new ConnectionString();// instantiating a new public static ConnectionString class
         public void AddPatient(string name, string phone, string address, DateTime dob, string gender, string allergies)
         {
 
             string query = "INSERT INTO PatientTable (PatName, PatPhone, PatAddress, PatDob, PatGender, PatAllergies) " +
            "values(@Name, @Phone, @Address, @Dateofbirth, @Gender, @Allergies)"; // query to add new patient to database
 
-            ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
             {
                 connection.Open();
@@ -42,8 +42,6 @@ namespace Dental_Clinic_Management.My
 
         public void DeletePatient(string query)
         {
-
-            ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
                 connection.Open();
@@ -67,7 +65,6 @@ namespace Dental_Clinic_Management.My
            "    PatAllergies = @Allergies " +
            "WHERE PatId = @Key"; // query to edit selected patient 
 
-            ConnectionString MyConnection = new ConnectionString();// instantiating a new ConnectionString class
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))// using GetCon method of ConnectionString class to get connection string
             {
                 connection.Open();
@@ -91,7 +88,6 @@ namespace Dental_Clinic_Management.My
 
         public DataSet ShowPatient(string query)
         {
-            ConnectionString MyConnection = new ConnectionString();
             using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
             {
                 connection.Open();
