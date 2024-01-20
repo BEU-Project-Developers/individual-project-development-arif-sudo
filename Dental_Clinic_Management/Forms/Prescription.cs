@@ -147,6 +147,20 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+        private void Filter()
+        {
+            try
+            {
+                string query = "SELECT * FROM PrescriptionTable " +
+                    "Where PatName like '%" + prescSearchTextBox.Text + "%'";
+                DataSet ds = prescription.ShowPrescription(query);
+                prescriptionDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void prescPatComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.GetPatientName();
@@ -281,6 +295,17 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void prescSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Filter();
+        }
+
+        private void prescSearchTextBox_Enter(object sender, EventArgs e)
+        {
+            prescSearchTextBox.Text = "";
+            prescSearchTextBox.Focus();
         }
     }
 }

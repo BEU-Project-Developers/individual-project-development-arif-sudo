@@ -46,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.prescriptionDGV = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.prescMedicines = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -65,6 +64,8 @@
             this.prescEditButton = new System.Windows.Forms.Button();
             this.prescDeleteButton = new System.Windows.Forms.Button();
             this.prescTreatment = new System.Windows.Forms.TextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.prescSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -278,18 +279,6 @@
             this.prescriptionDGV.Size = new System.Drawing.Size(769, 193);
             this.prescriptionDGV.TabIndex = 16;
             this.prescriptionDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prescriptionDGV_CellContentClick);
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(632, 373);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
-            this.maskedTextBox1.TabIndex = 15;
-            this.maskedTextBox1.Text = "Filter By Username";
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -510,14 +499,42 @@
             this.prescTreatment.Size = new System.Drawing.Size(172, 30);
             this.prescTreatment.TabIndex = 38;
             // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.maskedTextBox2.Location = new System.Drawing.Point(641, 378);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
+            this.maskedTextBox2.TabIndex = 18;
+            this.maskedTextBox2.Text = "Filter By ";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // prescSearchTextBox
+            // 
+            this.prescSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.prescSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescSearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.prescSearchTextBox.Location = new System.Drawing.Point(736, 378);
+            this.prescSearchTextBox.Name = "prescSearchTextBox";
+            this.prescSearchTextBox.Size = new System.Drawing.Size(95, 27);
+            this.prescSearchTextBox.TabIndex = 17;
+            this.prescSearchTextBox.Text = "Name";
+            this.prescSearchTextBox.TextChanged += new System.EventHandler(this.prescSearchTextBox_TextChanged);
+            this.prescSearchTextBox.Enter += new System.EventHandler(this.prescSearchTextBox_Enter);
+            // 
             // Prescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.prescSearchTextBox);
             this.Controls.Add(this.prescriptionDGV);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -563,7 +580,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView prescriptionDGV;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox prescCost;
@@ -582,5 +598,7 @@
         private System.Windows.Forms.Button prescEditButton;
         private System.Windows.Forms.Button prescDeleteButton;
         private System.Windows.Forms.TextBox prescTreatment;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox prescSearchTextBox;
     }
 }

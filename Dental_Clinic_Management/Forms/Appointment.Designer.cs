@@ -58,8 +58,9 @@
             this.aptTreatmentComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.aptPatientComboBox = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.aptDGV = new System.Windows.Forms.DataGridView();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.aptSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -412,18 +413,6 @@
             this.aptPatientComboBox.Size = new System.Drawing.Size(172, 34);
             this.aptPatientComboBox.TabIndex = 0;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(619, 348);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(216, 27);
-            this.maskedTextBox1.TabIndex = 9;
-            this.maskedTextBox1.Text = "Filter By Name";
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // aptDGV
             // 
             this.aptDGV.AllowUserToAddRows = false;
@@ -443,14 +432,42 @@
             this.aptDGV.TabIndex = 13;
             this.aptDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.aptDGV_CellContentClick);
             // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.maskedTextBox2.Location = new System.Drawing.Point(634, 348);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
+            this.maskedTextBox2.TabIndex = 15;
+            this.maskedTextBox2.Text = "Filter By ";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // aptSearchTextBox
+            // 
+            this.aptSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.aptSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aptSearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.aptSearchTextBox.Location = new System.Drawing.Point(729, 348);
+            this.aptSearchTextBox.Name = "aptSearchTextBox";
+            this.aptSearchTextBox.Size = new System.Drawing.Size(95, 27);
+            this.aptSearchTextBox.TabIndex = 14;
+            this.aptSearchTextBox.Text = "Name";
+            this.aptSearchTextBox.TextChanged += new System.EventHandler(this.aptSearchTextBox_TextChanged);
+            this.aptSearchTextBox.Enter += new System.EventHandler(this.aptSearchTextBox_Enter);
+            // 
             // Appointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.aptSearchTextBox);
             this.Controls.Add(this.aptDGV);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -489,7 +506,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox aptTreatmentComboBox;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -509,5 +525,7 @@
         private System.Windows.Forms.Button aptEditButton;
         private System.Windows.Forms.Button aptDeleteButton;
         private System.Windows.Forms.Button aptSaveButton;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox aptSearchTextBox;
     }
 }

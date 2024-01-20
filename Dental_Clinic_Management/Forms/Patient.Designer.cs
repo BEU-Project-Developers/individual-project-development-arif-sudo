@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.patEditButton = new System.Windows.Forms.Button();
+            this.patDeleteButton = new System.Windows.Forms.Button();
             this.patGenderCommoBox = new System.Windows.Forms.ComboBox();
             this.patAllergies = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -62,10 +64,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.patSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.patientDGV = new System.Windows.Forms.DataGridView();
-            this.patDeleteButton = new System.Windows.Forms.Button();
-            this.patEditButton = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -284,6 +285,34 @@
             this.panel2.Size = new System.Drawing.Size(769, 318);
             this.panel2.TabIndex = 9;
             // 
+            // patEditButton
+            // 
+            this.patEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.patEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patEditButton.ForeColor = System.Drawing.Color.White;
+            this.patEditButton.Location = new System.Drawing.Point(467, 255);
+            this.patEditButton.Name = "patEditButton";
+            this.patEditButton.Size = new System.Drawing.Size(134, 40);
+            this.patEditButton.TabIndex = 35;
+            this.patEditButton.Text = "Edit";
+            this.patEditButton.UseVisualStyleBackColor = false;
+            this.patEditButton.Click += new System.EventHandler(this.patEditButton_Click);
+            // 
+            // patDeleteButton
+            // 
+            this.patDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.patDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.patDeleteButton.Location = new System.Drawing.Point(317, 255);
+            this.patDeleteButton.Name = "patDeleteButton";
+            this.patDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.patDeleteButton.TabIndex = 34;
+            this.patDeleteButton.Text = "Delete";
+            this.patDeleteButton.UseVisualStyleBackColor = false;
+            this.patDeleteButton.Click += new System.EventHandler(this.patDeleteButton_Click);
+            // 
             // patGenderCommoBox
             // 
             this.patGenderCommoBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -451,29 +480,30 @@
             this.label9.TabIndex = 8;
             this.label9.Text = "Patients";
             // 
-            // maskedTextBox1
+            // patSearchTextBox
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(625, 388);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
-            this.maskedTextBox1.TabIndex = 11;
-            this.maskedTextBox1.Text = "Filter By Username";
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.patSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.patSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patSearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.patSearchTextBox.Location = new System.Drawing.Point(732, 388);
+            this.patSearchTextBox.Name = "patSearchTextBox";
+            this.patSearchTextBox.Size = new System.Drawing.Size(95, 27);
+            this.patSearchTextBox.TabIndex = 11;
+            this.patSearchTextBox.Text = "Name";
+            this.patSearchTextBox.TextChanged += new System.EventHandler(this.patSearchTextBox_TextChanged);
+            this.patSearchTextBox.MouseEnter += new System.EventHandler(this.patSearchTextBox_MouseEnter);
             // 
             // patientDGV
             // 
             this.patientDGV.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.patientDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.patientDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientDGV.GridColor = System.Drawing.Color.Silver;
             this.patientDGV.Location = new System.Drawing.Point(338, 426);
@@ -489,33 +519,19 @@
             this.patientDGV.TabIndex = 12;
             this.patientDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.patientDGV_CellContentClick);
             // 
-            // patDeleteButton
+            // maskedTextBox2
             // 
-            this.patDeleteButton.BackColor = System.Drawing.Color.Crimson;
-            this.patDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.patDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patDeleteButton.ForeColor = System.Drawing.Color.White;
-            this.patDeleteButton.Location = new System.Drawing.Point(317, 255);
-            this.patDeleteButton.Name = "patDeleteButton";
-            this.patDeleteButton.Size = new System.Drawing.Size(134, 40);
-            this.patDeleteButton.TabIndex = 34;
-            this.patDeleteButton.Text = "Delete";
-            this.patDeleteButton.UseVisualStyleBackColor = false;
-            this.patDeleteButton.Click += new System.EventHandler(this.patDeleteButton_Click);
-            // 
-            // patEditButton
-            // 
-            this.patEditButton.BackColor = System.Drawing.Color.LightSlateGray;
-            this.patEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.patEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patEditButton.ForeColor = System.Drawing.Color.White;
-            this.patEditButton.Location = new System.Drawing.Point(467, 255);
-            this.patEditButton.Name = "patEditButton";
-            this.patEditButton.Size = new System.Drawing.Size(134, 40);
-            this.patEditButton.TabIndex = 35;
-            this.patEditButton.Text = "Edit";
-            this.patEditButton.UseVisualStyleBackColor = false;
-            this.patEditButton.Click += new System.EventHandler(this.patEditButton_Click);
+            this.maskedTextBox2.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.maskedTextBox2.Location = new System.Drawing.Point(637, 388);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
+            this.maskedTextBox2.TabIndex = 13;
+            this.maskedTextBox2.Text = "Filter By ";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Patient
             // 
@@ -523,8 +539,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.patientDGV);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.patSearchTextBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -579,7 +596,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox patSearchTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView patientDGV;
         private System.Windows.Forms.TextBox patAddress;
@@ -589,5 +606,6 @@
         private System.Windows.Forms.ComboBox patGenderCommoBox;
         private System.Windows.Forms.Button patDeleteButton;
         private System.Windows.Forms.Button patEditButton;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
     }
 }

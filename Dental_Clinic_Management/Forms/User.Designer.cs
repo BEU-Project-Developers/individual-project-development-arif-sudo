@@ -46,8 +46,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userDGV = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.userEditButton = new System.Windows.Forms.Button();
+            this.userDeleteButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.UPassword = new System.Windows.Forms.TextBox();
             this.UPhone = new System.Windows.Forms.TextBox();
@@ -57,8 +58,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.userEditButton = new System.Windows.Forms.Button();
-            this.userDeleteButton = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.userSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -273,18 +274,6 @@
             this.userDGV.TabIndex = 16;
             this.userDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userDGV_CellContentClick);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(630, 330);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
-            this.maskedTextBox1.TabIndex = 15;
-            this.maskedTextBox1.Text = "Filter By Username";
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -302,6 +291,34 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 259);
             this.panel2.TabIndex = 14;
+            // 
+            // userEditButton
+            // 
+            this.userEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.userEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userEditButton.ForeColor = System.Drawing.Color.White;
+            this.userEditButton.Location = new System.Drawing.Point(475, 195);
+            this.userEditButton.Name = "userEditButton";
+            this.userEditButton.Size = new System.Drawing.Size(134, 40);
+            this.userEditButton.TabIndex = 37;
+            this.userEditButton.Text = "Edit";
+            this.userEditButton.UseVisualStyleBackColor = false;
+            this.userEditButton.Click += new System.EventHandler(this.userEditButton_Click);
+            // 
+            // userDeleteButton
+            // 
+            this.userDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.userDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.userDeleteButton.Location = new System.Drawing.Point(325, 195);
+            this.userDeleteButton.Name = "userDeleteButton";
+            this.userDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.userDeleteButton.TabIndex = 36;
+            this.userDeleteButton.Text = "Delete";
+            this.userDeleteButton.UseVisualStyleBackColor = false;
+            this.userDeleteButton.Click += new System.EventHandler(this.userDeleteButton_Click);
             // 
             // dataGridView1
             // 
@@ -402,33 +419,32 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Users";
             // 
-            // userEditButton
+            // maskedTextBox2
             // 
-            this.userEditButton.BackColor = System.Drawing.Color.LightSlateGray;
-            this.userEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userEditButton.ForeColor = System.Drawing.Color.White;
-            this.userEditButton.Location = new System.Drawing.Point(475, 195);
-            this.userEditButton.Name = "userEditButton";
-            this.userEditButton.Size = new System.Drawing.Size(134, 40);
-            this.userEditButton.TabIndex = 37;
-            this.userEditButton.Text = "Edit";
-            this.userEditButton.UseVisualStyleBackColor = false;
-            this.userEditButton.Click += new System.EventHandler(this.userEditButton_Click);
+            this.maskedTextBox2.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.maskedTextBox2.Location = new System.Drawing.Point(644, 331);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
+            this.maskedTextBox2.TabIndex = 18;
+            this.maskedTextBox2.Text = "Filter By ";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // userDeleteButton
+            // userSearchTextBox
             // 
-            this.userDeleteButton.BackColor = System.Drawing.Color.Crimson;
-            this.userDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userDeleteButton.ForeColor = System.Drawing.Color.White;
-            this.userDeleteButton.Location = new System.Drawing.Point(325, 195);
-            this.userDeleteButton.Name = "userDeleteButton";
-            this.userDeleteButton.Size = new System.Drawing.Size(134, 40);
-            this.userDeleteButton.TabIndex = 36;
-            this.userDeleteButton.Text = "Delete";
-            this.userDeleteButton.UseVisualStyleBackColor = false;
-            this.userDeleteButton.Click += new System.EventHandler(this.userDeleteButton_Click);
+            this.userSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.userSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userSearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.userSearchTextBox.Location = new System.Drawing.Point(739, 331);
+            this.userSearchTextBox.Name = "userSearchTextBox";
+            this.userSearchTextBox.Size = new System.Drawing.Size(95, 27);
+            this.userSearchTextBox.TabIndex = 17;
+            this.userSearchTextBox.Text = "Name";
+            this.userSearchTextBox.TextChanged += new System.EventHandler(this.userSearchTextBox_TextChanged);
+            this.userSearchTextBox.Enter += new System.EventHandler(this.userSearchTextBox_Enter);
             // 
             // User
             // 
@@ -436,8 +452,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.userSearchTextBox);
             this.Controls.Add(this.userDGV);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -483,7 +500,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView userDGV;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox UPassword;
@@ -496,5 +512,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button userEditButton;
         private System.Windows.Forms.Button userDeleteButton;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox userSearchTextBox;
     }
 }

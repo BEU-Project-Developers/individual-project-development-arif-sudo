@@ -108,6 +108,20 @@ namespace Dental_Clinic_Management.Forms
             this.Populate_UserDGV();
 
         }
+        private void Filter()
+        {
+            try
+            {
+                string query = "SELECT * FROM UsersTable " +
+                    "Where UName like '%" + userSearchTextBox.Text + "%'";
+                DataSet ds = user.ShowUsers(query);
+                userDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void userDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -131,6 +145,18 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void userSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Filter();
+        }
+
+        private void userSearchTextBox_Enter(object sender, EventArgs e)
+        {
+            userSearchTextBox.Text = "";
+            userSearchTextBox.Focus();
+            
         }
     }
 }

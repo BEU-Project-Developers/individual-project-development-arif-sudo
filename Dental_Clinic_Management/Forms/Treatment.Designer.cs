@@ -46,8 +46,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.treatmentDGV = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.treatEditButton = new System.Windows.Forms.Button();
+            this.treatDeleteButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.treatCost = new System.Windows.Forms.TextBox();
             this.treatDesc = new System.Windows.Forms.TextBox();
@@ -57,8 +58,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.treatEditButton = new System.Windows.Forms.Button();
-            this.treatDeleteButton = new System.Windows.Forms.Button();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.treatSearchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -271,18 +272,6 @@
             this.treatmentDGV.TabIndex = 16;
             this.treatmentDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.treatmentDGV_CellContentClick);
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox1.Location = new System.Drawing.Point(627, 331);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(217, 27);
-            this.maskedTextBox1.TabIndex = 15;
-            this.maskedTextBox1.Text = "Filter By Name";
-            this.maskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -300,6 +289,34 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(769, 259);
             this.panel2.TabIndex = 14;
+            // 
+            // treatEditButton
+            // 
+            this.treatEditButton.BackColor = System.Drawing.Color.LightSlateGray;
+            this.treatEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.treatEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatEditButton.ForeColor = System.Drawing.Color.White;
+            this.treatEditButton.Location = new System.Drawing.Point(480, 198);
+            this.treatEditButton.Name = "treatEditButton";
+            this.treatEditButton.Size = new System.Drawing.Size(134, 40);
+            this.treatEditButton.TabIndex = 37;
+            this.treatEditButton.Text = "Edit";
+            this.treatEditButton.UseVisualStyleBackColor = false;
+            this.treatEditButton.Click += new System.EventHandler(this.treatEditButton_Click);
+            // 
+            // treatDeleteButton
+            // 
+            this.treatDeleteButton.BackColor = System.Drawing.Color.Crimson;
+            this.treatDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.treatDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatDeleteButton.ForeColor = System.Drawing.Color.White;
+            this.treatDeleteButton.Location = new System.Drawing.Point(330, 198);
+            this.treatDeleteButton.Name = "treatDeleteButton";
+            this.treatDeleteButton.Size = new System.Drawing.Size(134, 40);
+            this.treatDeleteButton.TabIndex = 36;
+            this.treatDeleteButton.Text = "Delete";
+            this.treatDeleteButton.UseVisualStyleBackColor = false;
+            this.treatDeleteButton.Click += new System.EventHandler(this.treatDeleteButton_Click);
             // 
             // dataGridView1
             // 
@@ -401,33 +418,32 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Treatments";
             // 
-            // treatEditButton
+            // maskedTextBox2
             // 
-            this.treatEditButton.BackColor = System.Drawing.Color.LightSlateGray;
-            this.treatEditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.treatEditButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treatEditButton.ForeColor = System.Drawing.Color.White;
-            this.treatEditButton.Location = new System.Drawing.Point(480, 198);
-            this.treatEditButton.Name = "treatEditButton";
-            this.treatEditButton.Size = new System.Drawing.Size(134, 40);
-            this.treatEditButton.TabIndex = 37;
-            this.treatEditButton.Text = "Edit";
-            this.treatEditButton.UseVisualStyleBackColor = false;
-            this.treatEditButton.Click += new System.EventHandler(this.treatEditButton_Click);
+            this.maskedTextBox2.BackColor = System.Drawing.Color.White;
+            this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
+            this.maskedTextBox2.Location = new System.Drawing.Point(656, 331);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.ReadOnly = true;
+            this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
+            this.maskedTextBox2.TabIndex = 18;
+            this.maskedTextBox2.Text = "Filter By ";
+            this.maskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // treatDeleteButton
+            // treatSearchTextBox
             // 
-            this.treatDeleteButton.BackColor = System.Drawing.Color.Crimson;
-            this.treatDeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.treatDeleteButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treatDeleteButton.ForeColor = System.Drawing.Color.White;
-            this.treatDeleteButton.Location = new System.Drawing.Point(330, 198);
-            this.treatDeleteButton.Name = "treatDeleteButton";
-            this.treatDeleteButton.Size = new System.Drawing.Size(134, 40);
-            this.treatDeleteButton.TabIndex = 36;
-            this.treatDeleteButton.Text = "Delete";
-            this.treatDeleteButton.UseVisualStyleBackColor = false;
-            this.treatDeleteButton.Click += new System.EventHandler(this.treatDeleteButton_Click);
+            this.treatSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.treatSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatSearchTextBox.ForeColor = System.Drawing.Color.Black;
+            this.treatSearchTextBox.Location = new System.Drawing.Point(751, 331);
+            this.treatSearchTextBox.Name = "treatSearchTextBox";
+            this.treatSearchTextBox.Size = new System.Drawing.Size(95, 27);
+            this.treatSearchTextBox.TabIndex = 17;
+            this.treatSearchTextBox.Text = "Name";
+            this.treatSearchTextBox.TextChanged += new System.EventHandler(this.treatSearchTextBox_TextChanged);
+            this.treatSearchTextBox.Enter += new System.EventHandler(this.treatSearchTextBox_Enter);
             // 
             // Treatment
             // 
@@ -435,8 +451,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.maskedTextBox2);
+            this.Controls.Add(this.treatSearchTextBox);
             this.Controls.Add(this.treatmentDGV);
-            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
@@ -482,7 +499,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView treatmentDGV;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox treatCost;
@@ -495,5 +511,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button treatEditButton;
         private System.Windows.Forms.Button treatDeleteButton;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox treatSearchTextBox;
     }
 }

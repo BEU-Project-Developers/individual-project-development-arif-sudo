@@ -56,6 +56,20 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+        private void Filter()
+        {
+            try
+            {
+                string query = "SELECT * FROM PatientTable " +
+                    "Where PatName like '%" + patSearchTextBox.Text + "%'";
+                DataSet ds = patient.ShowPatient(query);
+                patientDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Patient_Load(object sender, EventArgs e)
         {
             this.Populate_PatientDGV();
@@ -141,6 +155,17 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void patSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Filter();
+        }
+
+        private void patSearchTextBox_MouseEnter(object sender, EventArgs e)
+        {
+            patSearchTextBox.Text = "";
+            patSearchTextBox.Focus();
         }
     }
 }

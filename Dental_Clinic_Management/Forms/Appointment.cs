@@ -83,6 +83,20 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+        private void Filter()
+        {
+            try
+            {
+                string query = "SELECT * FROM AppointmentTable " +
+                    "Where AptPatient like '%" + aptSearchTextBox.Text + "%'";
+                DataSet ds = appointment.ShowAppointment(query);
+                aptDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void Appointment_Load(object sender, EventArgs e)
         {
             this.fillPatient();
@@ -195,6 +209,17 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
                 return;
             }
+        }
+
+        private void aptSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Filter();
+        }
+
+        private void aptSearchTextBox_Enter(object sender, EventArgs e)
+        {
+            aptSearchTextBox.Text = "";
+            aptSearchTextBox.Focus();
         }
     }
 }

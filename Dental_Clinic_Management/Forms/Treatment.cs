@@ -103,7 +103,20 @@ namespace Dental_Clinic_Management.Forms
         {
             this.Populate_TreatmentDGV();
         }
-
+        private void Filter()
+        {
+            try
+            {
+                string query = "SELECT * FROM TreatmentTable " +
+                    "Where TreatName like '%" + treatSearchTextBox.Text + "%'";
+                DataSet ds = treatment.ShowTreatment(query);
+                treatmentDGV.DataSource = ds.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void treatEditButton_Click(object sender, EventArgs e)
         {
             try
@@ -126,6 +139,17 @@ namespace Dental_Clinic_Management.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void treatSearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            this.Filter();
+        }
+
+        private void treatSearchTextBox_Enter(object sender, EventArgs e)
+        {
+            treatSearchTextBox.Text = "";
+            treatSearchTextBox.Focus();
         }
     }
 }

@@ -428,7 +428,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Pages\" />
   </ItemGroup>
   <ItemGroup>
