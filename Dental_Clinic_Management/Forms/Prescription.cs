@@ -13,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls.WebParts;
 using System.Windows.Forms;
 
 namespace Dental_Clinic_Management.Forms
@@ -23,16 +24,30 @@ namespace Dental_Clinic_Management.Forms
         {
             InitializeComponent();
         }
-        public static int key = 0; // key here represents PatId in database // later we can use key to delete columns 
+        // Static variable to represent the key (PatId) for database operations.
+        public static int key = 0;
+
+        // Instance of MyPrescription class for database operations.
         public static MyPrescription prescription = new MyPrescription();
+
+        // Instance of ConnectionString class for managing database connection strings.
         public static ConnectionString MyConnection = new ConnectionString();
 
+        // Method to extract the appointment ID from the combo box selection.
         private string ExtractId(string input)
         {
+            // Splitting the input string using the '-' character as the delimiter.
             string[] parts = input.Split('-');
+
+            // Extracting the first part of the split string, which represents the ID.
+            // If there are multiple parts, the first part is selected; otherwise, an empty string is assigned.
             string idPart = parts.Length > 0 ? parts[0].Trim() : string.Empty;
+
+            // Returning the extracted ID part.
             return idPart;
         }
+
+        // Method to fill the patient combo box.
         private void fillPatient()
         {
             try
@@ -56,6 +71,8 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        // Method to get the patient name based on the selected appointment id .
         private void GetPatientName()
         {
             try
@@ -86,6 +103,8 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        // Method to get the treatment based on the selected appointment id.
         private void GetTreatment()
         {
             try
@@ -116,6 +135,8 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        // Method to get the treatment cost based on the selected treatment.
         private void GetPrice()
         {
             try
@@ -148,12 +169,17 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        // Method to filter the Prescription DataGridView based on patient name.
         private void Filter()
         {
             try
             {
+                // Query to filter data based on the prescription name
                 string query = "SELECT * FROM PrescriptionTable " +
                     "Where PatName like '%" + prescSearchTextBox.Text + "%'";
+
+                // Retrieving and displaying filtered data
                 DataSet ds = prescription.ShowPrescription(query);
                 prescriptionDGV.DataSource = ds.Tables[0];
             }
@@ -162,13 +188,17 @@ namespace Dental_Clinic_Management.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        // Event handler for the selection change committed event of the patient combo box.
         private void prescPatComboBox_SelectionChangeCommitted(object sender, EventArgs e)
         {
             this.GetPatientName();
             this.GetTreatment();
             this.GetPrice();
         }
-     
+
+
+        // Event handler for the load event of the Prescription form.
         private void Prescription_Load(object sender, EventArgs e)
         {
             this.fillPatient();
@@ -178,12 +208,18 @@ namespace Dental_Clinic_Management.Forms
             this.Populate_PrescriptionDGV();
         }
 
+        // Method to populate the Prescription DataGridView.
         private void Populate_PrescriptionDGV()
         {
             try
             {
+                // Query to retrieve all data from the PrescriptionTable
                 string query = "SELECT * FROM PrescriptionTable";
+
+                // Retrieving data using the ShowPrescription method of the MyPrescripiton class
                 DataSet ds = prescription.ShowPrescription(query);
+
+                // Setting the DataGridView's DataSource to the retrieved data
                 prescriptionDGV.DataSource = ds.Tables[0];
             }
             catch (Exception ex)
@@ -193,18 +229,25 @@ namespace Dental_Clinic_Management.Forms
             }
         }
 
+        // Event handler for the Save button click event.
         private void prescSaveButton_Click(object sender, EventArgs e)
         {
             try
             {
+                // Extracting data from the form
                 string name = prescName.Text;
                 string treatment = prescTreatment.Text;
                 int cost = Convert.ToInt32(prescCost.Text);
                 string medicines = prescMedicines.Text;
                 int quantity = Convert.ToInt32(prescQuantity.Text);
 
+                // Adding prescription using MyPrescription class
                 prescription.AddPrescription(name, treatment, cost, medicines, quantity);
+
+                // Displaying a success message
                 MessageBox.Show("Prescripiton added succesfully");
+
+                // Refreshing the Prescription DataGridView with updated data
                 this.Populate_PrescriptionDGV();
             }
             catch (Exception ex)
@@ -214,25 +257,36 @@ namespace Dental_Clinic_Management.Forms
             }
         }
 
+        // Event handler for the "Delete" button click
         private void prescDeleteButton_Click(object sender, EventArgs e)
         {
             try
             {
+                // Checking if a prescription is selected for deletion
                 if (key == 0)
                 {
                     MessageBox.Show("Please select prescription to delete");
                 }
                 else
                 {
+                    // Query to delete a prescription based on the key
                     string query = "DELETE FROM PrescriptionTable WHERE PrescId=" + key + "";
+
+                    // Deleting prescription using the DeletePrescription method of the MyPrescription class
                     prescription.DeletePrescription(query);
+
+                    // Displaying a success message
                     MessageBox.Show("Prescription deleted succesfully");
+
+                    // Clearing form fields and refreshing the Prescripiton DataGridView
                     prescName.Text = "";
                     prescTreatment.Text = "";
                     prescCost.Text = "";
                     prescMedicines.Text = "";
                     prescQuantity.Text = "";
                     prescPatComboBox.SelectedValue = "";
+
+                    // Populating the Prescripiton DataGridView
                     this.Populate_PrescriptionDGV();
                 }
             }
@@ -242,25 +296,33 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
         }
+
+        // Event handler for the "Edit" button click
         private void prescEditButton_Click(object sender, EventArgs e)
         {
             try
             {
+                // Extracting data from the form
                 string name = prescName.Text;
                 string treatment = prescTreatment.Text;
                 int cost = Convert.ToInt32(prescCost.Text);
                 string medicines = prescMedicines.Text;
                 int quantity = Convert.ToInt32(prescQuantity.Text);
 
+                // Checking if a treatment is selected for updating
                 if (key == 0)
                 {
                     MessageBox.Show("Select prescription to update");
                 }
                 else
                 {
-                    prescription.UpdatePatient(name, treatment, cost, medicines, quantity, key);
-                  
+                    // Updating prescription using the UpdatePrescription method of the MyPrescription class
+                    prescription.UpdatePrescription(name, treatment, cost, medicines, quantity, key);
+
+                    // Displaying a success message
                     MessageBox.Show("Prescription updated succesfully");
+
+                    // Refreshing the Prescription DataGridView with updated data
                     this.Populate_PrescriptionDGV();
                 }
             }
@@ -271,10 +333,12 @@ namespace Dental_Clinic_Management.Forms
             }
         }
 
+        // Event handler for clicking a cell in the Prescription DataGridView
         private void prescriptionDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                // Populating the form fields with data from the selected DataGridView row
                 prescName.Text = prescriptionDGV.SelectedRows[0].Cells[1].Value.ToString();
                 prescTreatment.Text = prescriptionDGV.SelectedRows[0].Cells[2].Value.ToString();
                 prescCost.Text = prescriptionDGV.SelectedRows[0].Cells[3].Value.ToString();
@@ -282,6 +346,7 @@ namespace Dental_Clinic_Management.Forms
                 prescQuantity.Text = prescriptionDGV.SelectedRows[0].Cells[5].Value.ToString();
                 prescPatComboBox.SelectedItem = prescriptionDGV.SelectedRows[0].Cells[0].Value.ToString() + " - " + prescName.Text;
 
+                // Setting the key for deletion or update
                 if (prescName.Text == "" || prescName.Text == "No data available")
                 {
                     key = 0;
@@ -298,14 +363,20 @@ namespace Dental_Clinic_Management.Forms
             }
         }
 
+        // Event handler for the text changed event of the prescription search TextBox.
         private void prescSearchTextBox_TextChanged(object sender, EventArgs e)
         {
+            // Calling the Filter method when the text in the search text box changes
             this.Filter();
         }
 
+        // Event handler for the enter event of the prescription search TextBox.
         private void prescSearchTextBox_Enter(object sender, EventArgs e)
         {
+            // Clearing the text in the search text box when it receives focus
             prescSearchTextBox.Text = "";
+
+            // Setting focus to the search text box
             prescSearchTextBox.Focus();
         }
 
