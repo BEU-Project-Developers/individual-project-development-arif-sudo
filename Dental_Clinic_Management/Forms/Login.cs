@@ -42,8 +42,8 @@ namespace Dental_Clinic_Management.Forms
             try
             {
                 ConnectionString MyConnection = new ConnectionString();
-                // Establishing a connection to the database using the connection string.
 
+                // Establishing a connection to the database using the connection string.
                 using (SqlConnection connection = new SqlConnection(MyConnection.GetConnectionString()))
                 {
                     connection.Open(); // Opening the connection to the database.
@@ -81,6 +81,13 @@ namespace Dental_Clinic_Management.Forms
                 return;
             }
 
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Hide();
         }
     }
 }
