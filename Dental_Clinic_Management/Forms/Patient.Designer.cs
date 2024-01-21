@@ -29,20 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.prescription = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
-            this.users = new System.Windows.Forms.Label();
+            this.appointment = new System.Windows.Forms.Label();
             this.treatment = new System.Windows.Forms.Label();
-            this.patients = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -73,7 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -88,13 +85,11 @@
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.prescription);
             this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.dashboard);
-            this.panel1.Controls.Add(this.users);
+            this.panel1.Controls.Add(this.appointment);
             this.panel1.Controls.Add(this.treatment);
-            this.panel1.Controls.Add(this.patients);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -107,7 +102,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(26, 540);
+            this.pictureBox7.Location = new System.Drawing.Point(26, 546);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(48, 48);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,7 +112,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(26, 461);
+            this.pictureBox6.Location = new System.Drawing.Point(26, 449);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(48, 48);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +122,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(26, 380);
+            this.pictureBox5.Location = new System.Drawing.Point(26, 258);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(48, 48);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -137,7 +132,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(26, 302);
+            this.pictureBox4.Location = new System.Drawing.Point(26, 356);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -147,29 +142,19 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(26, 221);
+            this.pictureBox3.Location = new System.Drawing.Point(26, 167);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 34;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(26, 154);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 33;
-            this.pictureBox2.TabStop = false;
-            // 
             // prescription
             // 
             this.prescription.AutoSize = true;
             this.prescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescription.ForeColor = System.Drawing.Color.White;
-            this.prescription.Location = new System.Drawing.Point(96, 311);
+            this.prescription.Location = new System.Drawing.Point(96, 365);
             this.prescription.Name = "prescription";
             this.prescription.Size = new System.Drawing.Size(124, 26);
             this.prescription.TabIndex = 32;
@@ -181,7 +166,7 @@
             this.logout.AutoSize = true;
             this.logout.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.White;
-            this.logout.Location = new System.Drawing.Point(96, 554);
+            this.logout.Location = new System.Drawing.Point(96, 556);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(78, 26);
             this.logout.TabIndex = 30;
@@ -193,48 +178,36 @@
             this.dashboard.AutoSize = true;
             this.dashboard.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard.ForeColor = System.Drawing.Color.White;
-            this.dashboard.Location = new System.Drawing.Point(96, 473);
+            this.dashboard.Location = new System.Drawing.Point(96, 461);
             this.dashboard.Name = "dashboard";
             this.dashboard.Size = new System.Drawing.Size(113, 26);
             this.dashboard.TabIndex = 29;
             this.dashboard.Text = "Dashboard";
             this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
             // 
-            // users
+            // appointment
             // 
-            this.users.AutoSize = true;
-            this.users.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users.ForeColor = System.Drawing.Color.White;
-            this.users.Location = new System.Drawing.Point(96, 389);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(63, 26);
-            this.users.TabIndex = 27;
-            this.users.Text = "Users";
-            this.users.Click += new System.EventHandler(this.users_Click);
+            this.appointment.AutoSize = true;
+            this.appointment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointment.ForeColor = System.Drawing.Color.White;
+            this.appointment.Location = new System.Drawing.Point(96, 267);
+            this.appointment.Name = "appointment";
+            this.appointment.Size = new System.Drawing.Size(134, 26);
+            this.appointment.TabIndex = 27;
+            this.appointment.Text = "Appointment";
+            this.appointment.Click += new System.EventHandler(this.appointment_Click_1);
             // 
             // treatment
             // 
             this.treatment.AutoSize = true;
             this.treatment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treatment.ForeColor = System.Drawing.Color.White;
-            this.treatment.Location = new System.Drawing.Point(96, 234);
+            this.treatment.Location = new System.Drawing.Point(96, 180);
             this.treatment.Name = "treatment";
             this.treatment.Size = new System.Drawing.Size(105, 26);
             this.treatment.TabIndex = 25;
             this.treatment.Text = "Treatment";
             this.treatment.Click += new System.EventHandler(this.treatment_Click);
-            // 
-            // patients
-            // 
-            this.patients.AutoSize = true;
-            this.patients.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patients.ForeColor = System.Drawing.Color.White;
-            this.patients.Location = new System.Drawing.Point(96, 162);
-            this.patients.Name = "patients";
-            this.patients.Size = new System.Drawing.Size(75, 26);
-            this.patients.TabIndex = 24;
-            this.patients.Text = "Patient";
-            this.patients.Click += new System.EventHandler(this.patients_Click);
             // 
             // label2
             // 
@@ -502,14 +475,14 @@
             // patientDGV
             // 
             this.patientDGV.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.patientDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.patientDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.patientDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.patientDGV.GridColor = System.Drawing.Color.Silver;
             this.patientDGV.Location = new System.Drawing.Point(338, 426);
@@ -563,7 +536,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -580,9 +552,8 @@
         private System.Windows.Forms.Label prescription;
         private System.Windows.Forms.Label logout;
         private System.Windows.Forms.Label dashboard;
-        private System.Windows.Forms.Label users;
+        private System.Windows.Forms.Label appointment;
         private System.Windows.Forms.Label treatment;
-        private System.Windows.Forms.Label patients;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -601,7 +572,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.MaskedTextBox patSearchTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView patientDGV;

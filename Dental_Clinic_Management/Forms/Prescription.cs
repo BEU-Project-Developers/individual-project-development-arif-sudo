@@ -325,19 +325,14 @@ namespace Dental_Clinic_Management.Forms
             this.Hide();
         }
 
-        private void users_Click(object sender, EventArgs e)
+        private void appointment_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Show();
+            Appointment appointment  = new Appointment();
+            appointment.Show();
             this.Hide();
         }
 
-        private void prescriptions_Click(object sender, EventArgs e)
-        {
-            Prescription prescription = new Prescription();
-            prescription.Show();
-            this.Hide();
-        }
+     
 
         private void treatment_Click(object sender, EventArgs e)
         {

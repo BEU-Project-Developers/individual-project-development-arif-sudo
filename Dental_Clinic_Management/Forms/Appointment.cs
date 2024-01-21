@@ -127,7 +127,7 @@ namespace Dental_Clinic_Management.Forms
                 DateTime date = aptDate.Value.Date;
                 TimeSpan time = aptTime.Value.TimeOfDay;
                 appointment.AddAppointment(patient, treatment, date, time);
-                MessageBox.Show("Appointment recoreded succesfully");
+                MessageBox.Show("Appointment recorded succesfully");
                 this.Populate_Appointment();
 
             } catch(Exception ex) {
@@ -236,12 +236,6 @@ namespace Dental_Clinic_Management.Forms
             this.Hide();
         }
 
-        private void users_Click(object sender, EventArgs e)
-        {
-            User user = new User();
-            user.Show();
-            this.Hide();
-        }
 
         private void prescription_Click(object sender, EventArgs e)
         {

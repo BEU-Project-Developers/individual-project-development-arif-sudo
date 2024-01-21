@@ -173,10 +173,10 @@ namespace Dental_Clinic_Management.Forms
             this.Hide();
         }
 
-        private void users_Click(object sender, EventArgs e)
+        private void appointment_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.Show();
+            Appointment appointment = new Appointment();
+            appointment.Show();
             this.Hide();
         }
 
@@ -200,5 +200,6 @@ namespace Dental_Clinic_Management.Forms
             patient.Show();
             this.Hide();
         }
+
     }
 }

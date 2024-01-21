@@ -32,15 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.prescription = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
-            this.users = new System.Windows.Forms.Label();
-            this.treatments = new System.Windows.Forms.Label();
             this.patient = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,33 +56,32 @@
             this.label9 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.treatSearchTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.appointment = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treatmentDGV)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.pictureBox3);
+            this.panel1.Controls.Add(this.appointment);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.prescription);
             this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.dashboard);
-            this.panel1.Controls.Add(this.users);
-            this.panel1.Controls.Add(this.treatments);
             this.panel1.Controls.Add(this.patient);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -110,42 +105,22 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(26, 461);
+            this.pictureBox6.Location = new System.Drawing.Point(26, 443);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(48, 48);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 37;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(26, 380);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 36;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(26, 302);
+            this.pictureBox4.Location = new System.Drawing.Point(26, 342);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 35;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(26, 221);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 34;
-            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -162,7 +137,7 @@
             this.prescription.AutoSize = true;
             this.prescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescription.ForeColor = System.Drawing.Color.White;
-            this.prescription.Location = new System.Drawing.Point(96, 311);
+            this.prescription.Location = new System.Drawing.Point(96, 351);
             this.prescription.Name = "prescription";
             this.prescription.Size = new System.Drawing.Size(124, 26);
             this.prescription.TabIndex = 32;
@@ -186,36 +161,12 @@
             this.dashboard.AutoSize = true;
             this.dashboard.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard.ForeColor = System.Drawing.Color.White;
-            this.dashboard.Location = new System.Drawing.Point(96, 473);
+            this.dashboard.Location = new System.Drawing.Point(96, 455);
             this.dashboard.Name = "dashboard";
             this.dashboard.Size = new System.Drawing.Size(113, 26);
             this.dashboard.TabIndex = 29;
             this.dashboard.Text = "Dashboard";
             this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
-            // 
-            // users
-            // 
-            this.users.AutoSize = true;
-            this.users.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users.ForeColor = System.Drawing.Color.White;
-            this.users.Location = new System.Drawing.Point(96, 389);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(63, 26);
-            this.users.TabIndex = 27;
-            this.users.Text = "Users";
-            this.users.Click += new System.EventHandler(this.users_Click);
-            // 
-            // treatments
-            // 
-            this.treatments.AutoSize = true;
-            this.treatments.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treatments.ForeColor = System.Drawing.Color.White;
-            this.treatments.Location = new System.Drawing.Point(96, 234);
-            this.treatments.Name = "treatments";
-            this.treatments.Size = new System.Drawing.Size(105, 26);
-            this.treatments.TabIndex = 25;
-            this.treatments.Text = "Treatment";
-            this.treatments.Click += new System.EventHandler(this.treatments_Click);
             // 
             // patient
             // 
@@ -451,6 +402,28 @@
             this.treatSearchTextBox.TextChanged += new System.EventHandler(this.treatSearchTextBox_TextChanged);
             this.treatSearchTextBox.Enter += new System.EventHandler(this.treatSearchTextBox_Enter);
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(26, 245);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 40;
+            this.pictureBox3.TabStop = false;
+            // 
+            // appointment
+            // 
+            this.appointment.AutoSize = true;
+            this.appointment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointment.ForeColor = System.Drawing.Color.White;
+            this.appointment.Location = new System.Drawing.Point(96, 254);
+            this.appointment.Name = "appointment";
+            this.appointment.Size = new System.Drawing.Size(134, 26);
+            this.appointment.TabIndex = 39;
+            this.appointment.Text = "Appointment";
+            this.appointment.Click += new System.EventHandler(this.appointment_Click);
+            // 
             // Treatment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,15 +445,14 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treatmentDGV)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -491,15 +463,11 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label prescription;
         private System.Windows.Forms.Label logout;
         private System.Windows.Forms.Label dashboard;
-        private System.Windows.Forms.Label users;
-        private System.Windows.Forms.Label treatments;
         private System.Windows.Forms.Label patient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -519,5 +487,7 @@
         private System.Windows.Forms.Button treatDeleteButton;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox treatSearchTextBox;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label appointment;
     }
 }

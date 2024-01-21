@@ -32,14 +32,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.prescription = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
-            this.users = new System.Windows.Forms.Label();
             this.treatment = new System.Windows.Forms.Label();
             this.patient = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,7 +62,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -78,14 +75,12 @@
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.prescription);
             this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.dashboard);
-            this.panel1.Controls.Add(this.users);
             this.panel1.Controls.Add(this.treatment);
             this.panel1.Controls.Add(this.patient);
             this.panel1.Controls.Add(this.label2);
@@ -110,27 +105,17 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(27, 455);
+            this.pictureBox6.Location = new System.Drawing.Point(27, 442);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(48, 48);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 52;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(27, 374);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 51;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(27, 296);
+            this.pictureBox4.Location = new System.Drawing.Point(27, 348);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,7 +125,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(27, 215);
+            this.pictureBox3.Location = new System.Drawing.Point(27, 253);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -150,7 +135,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 150);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 164);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,7 +147,7 @@
             this.prescription.AutoSize = true;
             this.prescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescription.ForeColor = System.Drawing.Color.White;
-            this.prescription.Location = new System.Drawing.Point(99, 305);
+            this.prescription.Location = new System.Drawing.Point(99, 357);
             this.prescription.Name = "prescription";
             this.prescription.Size = new System.Drawing.Size(124, 26);
             this.prescription.TabIndex = 47;
@@ -186,31 +171,19 @@
             this.dashboard.AutoSize = true;
             this.dashboard.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard.ForeColor = System.Drawing.Color.White;
-            this.dashboard.Location = new System.Drawing.Point(99, 467);
+            this.dashboard.Location = new System.Drawing.Point(99, 452);
             this.dashboard.Name = "dashboard";
             this.dashboard.Size = new System.Drawing.Size(113, 26);
             this.dashboard.TabIndex = 45;
             this.dashboard.Text = "Dashboard";
             this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
             // 
-            // users
-            // 
-            this.users.AutoSize = true;
-            this.users.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users.ForeColor = System.Drawing.Color.White;
-            this.users.Location = new System.Drawing.Point(99, 385);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(63, 26);
-            this.users.TabIndex = 44;
-            this.users.Text = "Users";
-            this.users.Click += new System.EventHandler(this.users_Click);
-            // 
             // treatment
             // 
             this.treatment.AutoSize = true;
             this.treatment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treatment.ForeColor = System.Drawing.Color.White;
-            this.treatment.Location = new System.Drawing.Point(99, 228);
+            this.treatment.Location = new System.Drawing.Point(99, 266);
             this.treatment.Name = "treatment";
             this.treatment.Size = new System.Drawing.Size(105, 26);
             this.treatment.TabIndex = 43;
@@ -222,7 +195,7 @@
             this.patient.AutoSize = true;
             this.patient.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patient.ForeColor = System.Drawing.Color.White;
-            this.patient.Location = new System.Drawing.Point(99, 159);
+            this.patient.Location = new System.Drawing.Point(99, 173);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(75, 26);
             this.patient.TabIndex = 42;
@@ -486,7 +459,6 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -514,14 +486,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label prescription;
         private System.Windows.Forms.Label logout;
         private System.Windows.Forms.Label dashboard;
-        private System.Windows.Forms.Label users;
         private System.Windows.Forms.Label treatment;
         private System.Windows.Forms.Label patient;
         private System.Windows.Forms.Label label2;

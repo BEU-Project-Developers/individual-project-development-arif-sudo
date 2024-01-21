@@ -30,16 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Prescription));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.appointment = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.prescriptions = new System.Windows.Forms.Label();
             this.logout = new System.Windows.Forms.Label();
             this.dashboard = new System.Windows.Forms.Label();
-            this.users = new System.Windows.Forms.Label();
             this.treatment = new System.Windows.Forms.Label();
             this.patient = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,10 +68,9 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,16 +82,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.pictureBox8);
+            this.panel1.Controls.Add(this.appointment);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.pictureBox6);
-            this.panel1.Controls.Add(this.pictureBox5);
-            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.prescriptions);
             this.panel1.Controls.Add(this.logout);
             this.panel1.Controls.Add(this.dashboard);
-            this.panel1.Controls.Add(this.users);
             this.panel1.Controls.Add(this.treatment);
             this.panel1.Controls.Add(this.patient);
             this.panel1.Controls.Add(this.label2);
@@ -106,10 +101,32 @@
             this.panel1.Size = new System.Drawing.Size(296, 631);
             this.panel1.TabIndex = 1;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(26, 352);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 40;
+            this.pictureBox8.TabStop = false;
+            // 
+            // appointment
+            // 
+            this.appointment.AutoSize = true;
+            this.appointment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appointment.ForeColor = System.Drawing.Color.White;
+            this.appointment.Location = new System.Drawing.Point(96, 361);
+            this.appointment.Name = "appointment";
+            this.appointment.Size = new System.Drawing.Size(134, 26);
+            this.appointment.TabIndex = 39;
+            this.appointment.Text = "Appointment";
+            this.appointment.Click += new System.EventHandler(this.appointment_Click);
+            // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(26, 540);
+            this.pictureBox7.Location = new System.Drawing.Point(26, 548);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(48, 48);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,37 +136,17 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(26, 461);
+            this.pictureBox6.Location = new System.Drawing.Point(26, 448);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(48, 48);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 37;
             this.pictureBox6.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(26, 380);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 36;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(26, 302);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 35;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(26, 221);
+            this.pictureBox3.Location = new System.Drawing.Point(26, 255);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,31 +156,19 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(26, 154);
+            this.pictureBox2.Location = new System.Drawing.Point(26, 163);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 33;
             this.pictureBox2.TabStop = false;
             // 
-            // prescriptions
-            // 
-            this.prescriptions.AutoSize = true;
-            this.prescriptions.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescriptions.ForeColor = System.Drawing.Color.White;
-            this.prescriptions.Location = new System.Drawing.Point(96, 311);
-            this.prescriptions.Name = "prescriptions";
-            this.prescriptions.Size = new System.Drawing.Size(124, 26);
-            this.prescriptions.TabIndex = 32;
-            this.prescriptions.Text = "Prescription";
-            this.prescriptions.Click += new System.EventHandler(this.prescriptions_Click);
-            // 
             // logout
             // 
             this.logout.AutoSize = true;
             this.logout.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.ForeColor = System.Drawing.Color.White;
-            this.logout.Location = new System.Drawing.Point(96, 554);
+            this.logout.Location = new System.Drawing.Point(96, 557);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(78, 26);
             this.logout.TabIndex = 30;
@@ -195,31 +180,19 @@
             this.dashboard.AutoSize = true;
             this.dashboard.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard.ForeColor = System.Drawing.Color.White;
-            this.dashboard.Location = new System.Drawing.Point(96, 473);
+            this.dashboard.Location = new System.Drawing.Point(96, 460);
             this.dashboard.Name = "dashboard";
             this.dashboard.Size = new System.Drawing.Size(113, 26);
             this.dashboard.TabIndex = 29;
             this.dashboard.Text = "Dashboard";
             this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
             // 
-            // users
-            // 
-            this.users.AutoSize = true;
-            this.users.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.users.ForeColor = System.Drawing.Color.White;
-            this.users.Location = new System.Drawing.Point(96, 389);
-            this.users.Name = "users";
-            this.users.Size = new System.Drawing.Size(63, 26);
-            this.users.TabIndex = 27;
-            this.users.Text = "Users";
-            this.users.Click += new System.EventHandler(this.users_Click);
-            // 
             // treatment
             // 
             this.treatment.AutoSize = true;
             this.treatment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treatment.ForeColor = System.Drawing.Color.White;
-            this.treatment.Location = new System.Drawing.Point(96, 234);
+            this.treatment.Location = new System.Drawing.Point(96, 268);
             this.treatment.Name = "treatment";
             this.treatment.Size = new System.Drawing.Size(105, 26);
             this.treatment.TabIndex = 25;
@@ -231,7 +204,7 @@
             this.patient.AutoSize = true;
             this.patient.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patient.ForeColor = System.Drawing.Color.White;
-            this.patient.Location = new System.Drawing.Point(96, 162);
+            this.patient.Location = new System.Drawing.Point(96, 171);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(75, 26);
             this.patient.TabIndex = 24;
@@ -584,10 +557,9 @@
             this.Load += new System.EventHandler(this.Prescription_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -605,14 +577,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label prescriptions;
         private System.Windows.Forms.Label logout;
         private System.Windows.Forms.Label dashboard;
-        private System.Windows.Forms.Label users;
         private System.Windows.Forms.Label treatment;
         private System.Windows.Forms.Label patient;
         private System.Windows.Forms.Label label2;
@@ -642,5 +610,7 @@
         private System.Windows.Forms.Button printButton;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label appointment;
     }
 }
