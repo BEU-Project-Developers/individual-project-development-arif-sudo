@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +109,7 @@
             this.userProgressBar.SuperscriptText = "°C";
             this.userProgressBar.TabIndex = 9;
             this.userProgressBar.TextMargin = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.userProgressBar.Value = 68;
             // 
             // aptProgressBar
             // 
@@ -138,6 +140,7 @@
             this.aptProgressBar.SuperscriptText = "°C";
             this.aptProgressBar.TabIndex = 10;
             this.aptProgressBar.TextMargin = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.aptProgressBar.Value = 68;
             // 
             // nextAptProgressBar
             // 
@@ -155,7 +158,7 @@
             this.nextAptProgressBar.OuterColor = System.Drawing.Color.Silver;
             this.nextAptProgressBar.OuterMargin = -25;
             this.nextAptProgressBar.OuterWidth = 20;
-            this.nextAptProgressBar.ProgressColor = System.Drawing.Color.Navy;
+            this.nextAptProgressBar.ProgressColor = System.Drawing.Color.LightSlateGray;
             this.nextAptProgressBar.ProgressWidth = 23;
             this.nextAptProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
             this.nextAptProgressBar.Size = new System.Drawing.Size(200, 180);
@@ -168,6 +171,7 @@
             this.nextAptProgressBar.SuperscriptText = "°C";
             this.nextAptProgressBar.TabIndex = 12;
             this.nextAptProgressBar.TextMargin = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.nextAptProgressBar.Value = 68;
             // 
             // patientProgressBar
             // 
@@ -185,7 +189,7 @@
             this.patientProgressBar.OuterColor = System.Drawing.Color.Silver;
             this.patientProgressBar.OuterMargin = -25;
             this.patientProgressBar.OuterWidth = 20;
-            this.patientProgressBar.ProgressColor = System.Drawing.Color.Teal;
+            this.patientProgressBar.ProgressColor = System.Drawing.Color.DarkViolet;
             this.patientProgressBar.ProgressWidth = 23;
             this.patientProgressBar.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientProgressBar.Size = new System.Drawing.Size(200, 180);
@@ -198,6 +202,7 @@
             this.patientProgressBar.SuperscriptText = "°C";
             this.patientProgressBar.TabIndex = 11;
             this.patientProgressBar.TextMargin = new System.Windows.Forms.Padding(25, 0, 25, 0);
+            this.patientProgressBar.Value = 68;
             // 
             // label1
             // 
@@ -249,12 +254,24 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Next appointment";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(549, 586);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 20);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Back";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -293,5 +310,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

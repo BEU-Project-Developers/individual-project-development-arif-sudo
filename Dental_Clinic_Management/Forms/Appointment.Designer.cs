@@ -36,12 +36,12 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.prescription = new System.Windows.Forms.Label();
+            this.logout = new System.Windows.Forms.Label();
+            this.dashboard = new System.Windows.Forms.Label();
+            this.users = new System.Windows.Forms.Label();
+            this.treatment = new System.Windows.Forms.Label();
+            this.patient = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -82,12 +82,12 @@
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.prescription);
+            this.panel1.Controls.Add(this.logout);
+            this.panel1.Controls.Add(this.dashboard);
+            this.panel1.Controls.Add(this.users);
+            this.panel1.Controls.Add(this.treatment);
+            this.panel1.Controls.Add(this.patient);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -157,71 +157,77 @@
             this.pictureBox2.TabIndex = 48;
             this.pictureBox2.TabStop = false;
             // 
-            // label8
+            // prescription
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(99, 305);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(124, 26);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Prescription";
+            this.prescription.AutoSize = true;
+            this.prescription.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescription.ForeColor = System.Drawing.Color.White;
+            this.prescription.Location = new System.Drawing.Point(99, 305);
+            this.prescription.Name = "prescription";
+            this.prescription.Size = new System.Drawing.Size(124, 26);
+            this.prescription.TabIndex = 47;
+            this.prescription.Text = "Prescription";
+            this.prescription.Click += new System.EventHandler(this.prescription_Click);
             // 
-            // label7
+            // logout
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(99, 546);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 26);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "Logout";
+            this.logout.AutoSize = true;
+            this.logout.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.ForeColor = System.Drawing.Color.White;
+            this.logout.Location = new System.Drawing.Point(99, 546);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(78, 26);
+            this.logout.TabIndex = 46;
+            this.logout.Text = "Logout";
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
-            // label6
+            // dashboard
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(99, 467);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 26);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Dashboard";
+            this.dashboard.AutoSize = true;
+            this.dashboard.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboard.ForeColor = System.Drawing.Color.White;
+            this.dashboard.Location = new System.Drawing.Point(99, 467);
+            this.dashboard.Name = "dashboard";
+            this.dashboard.Size = new System.Drawing.Size(113, 26);
+            this.dashboard.TabIndex = 45;
+            this.dashboard.Text = "Dashboard";
+            this.dashboard.Click += new System.EventHandler(this.dashboard_Click);
             // 
-            // label5
+            // users
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(99, 385);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 26);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Users";
+            this.users.AutoSize = true;
+            this.users.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.users.ForeColor = System.Drawing.Color.White;
+            this.users.Location = new System.Drawing.Point(99, 385);
+            this.users.Name = "users";
+            this.users.Size = new System.Drawing.Size(63, 26);
+            this.users.TabIndex = 44;
+            this.users.Text = "Users";
+            this.users.Click += new System.EventHandler(this.users_Click);
             // 
-            // label4
+            // treatment
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(99, 228);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 26);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Treatment";
+            this.treatment.AutoSize = true;
+            this.treatment.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treatment.ForeColor = System.Drawing.Color.White;
+            this.treatment.Location = new System.Drawing.Point(99, 228);
+            this.treatment.Name = "treatment";
+            this.treatment.Size = new System.Drawing.Size(105, 26);
+            this.treatment.TabIndex = 43;
+            this.treatment.Text = "Treatment";
+            this.treatment.Click += new System.EventHandler(this.treatment_Click);
             // 
-            // label3
+            // patient
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(99, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 26);
-            this.label3.TabIndex = 42;
-            this.label3.Text = "Patient";
+            this.patient.AutoSize = true;
+            this.patient.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patient.ForeColor = System.Drawing.Color.White;
+            this.patient.Location = new System.Drawing.Point(99, 159);
+            this.patient.Name = "patient";
+            this.patient.Size = new System.Drawing.Size(75, 26);
+            this.patient.TabIndex = 42;
+            this.patient.Text = "Patient";
+            this.patient.Click += new System.EventHandler(this.patient_Click);
             // 
             // label2
             // 
@@ -512,12 +518,12 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label prescription;
+        private System.Windows.Forms.Label logout;
+        private System.Windows.Forms.Label dashboard;
+        private System.Windows.Forms.Label users;
+        private System.Windows.Forms.Label treatment;
+        private System.Windows.Forms.Label patient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -221,5 +221,47 @@ namespace Dental_Clinic_Management.Forms
             aptSearchTextBox.Text = "";
             aptSearchTextBox.Focus();
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void dashboard_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
+        }
+
+        private void users_Click(object sender, EventArgs e)
+        {
+            User user = new User();
+            user.Show();
+            this.Hide();
+        }
+
+        private void prescription_Click(object sender, EventArgs e)
+        {
+            Prescription prescription = new Prescription();
+            prescription.Show();
+            this.Hide();
+        }
+
+        private void treatment_Click(object sender, EventArgs e)
+        {
+            Treatment treatment = new Treatment();
+            treatment.Show();
+            this.Hide();
+        }
+
+        private void patient_Click(object sender, EventArgs e)
+        {
+            Patient patient = new Patient();
+            patient.Show();
+            this.Hide();
+        }
     }
 }

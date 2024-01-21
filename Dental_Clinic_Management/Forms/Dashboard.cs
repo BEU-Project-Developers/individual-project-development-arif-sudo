@@ -77,5 +77,12 @@ namespace Dental_Clinic_Management.Forms
                 }   
             }
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            Appointment appointment = new Appointment();
+            appointment.Show();
+            this.Hide();
+        }
     }
 }
