@@ -48,7 +48,7 @@ namespace Dental_Clinic_Management.Forms
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
 
-                    if (dt.Rows[0][0].ToString() == "1")
+                    if (Convert.ToInt32(dt.Rows[0][0].ToString()) > 0)
                     {
                         Appointment appointment = new Appointment();
                         appointment.Show();

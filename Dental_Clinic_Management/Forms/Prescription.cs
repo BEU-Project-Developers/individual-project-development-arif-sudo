@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -308,6 +309,8 @@ namespace Dental_Clinic_Management.Forms
             prescSearchTextBox.Focus();
         }
 
+        //The click functions below are used to create a new instance of corresponding form,show that form and hide current form
+        //These codes are repeated in all fomrs
         private void logout_Click(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -348,6 +351,49 @@ namespace Dental_Clinic_Management.Forms
             Patient patient = new Patient();
             patient.Show();
             this.Hide();
+        }
+        // Declaring a Bitmap object to store the content of the DataGridView
+        Bitmap bitmap = null;
+        // Event handler for the button click event to initiate the printing process
+        private void printButton_Click(object sender, EventArgs e)
+        {
+
+            // Getting the current height of the DataGridView
+            int height = prescriptionDGV.Height;
+
+            // Setting the DataGridView height to accommodate all rows for printing
+            prescriptionDGV.Height = prescriptionDGV.RowCount * prescriptionDGV.RowTemplate.Height * 2;
+
+            // Creating a new Bitmap with the dimensions of the DataGridView
+            bitmap = new Bitmap(prescriptionDGV.Width, prescriptionDGV.Height);
+
+            // Drawing the DataGridView content onto the Bitmap
+            prescriptionDGV.DrawToBitmap(bitmap, new Rectangle(0, 10, prescriptionDGV.Width, prescriptionDGV.Height));
+
+            // Restore the original height of the DataGridView
+            prescriptionDGV.Height = height;
+
+            // Show the print preview dialog to preview the printed content
+            printPreviewDialog1.ShowDialog();
+            
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // Calculate the scaling factors to fit the DataGridView content to the page
+            float scaleWidth = e.PageBounds.Width / (float)bitmap.Width;
+            float scaleHeight = e.PageBounds.Height / (float)bitmap.Height;
+
+            // Choose the smaller of the two scaling factors to maintain aspect ratio
+            float scale = Math.Min(scaleWidth, scaleHeight);
+
+            // Apply the scaling transformation
+            e.Graphics.ScaleTransform(scale, scale);
+
+
+            // Draw the previously created Bitmap onto the printer's Graphics object
+            e.Graphics.DrawImage(bitmap, 0, 0);
+
         }
     }
 }

@@ -66,6 +66,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.prescSearchTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.printButton = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -276,13 +279,13 @@
             this.prescriptionDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.prescriptionDGV.BackgroundColor = System.Drawing.Color.White;
             this.prescriptionDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.prescriptionDGV.Location = new System.Drawing.Point(346, 411);
+            this.prescriptionDGV.Location = new System.Drawing.Point(347, 406);
             this.prescriptionDGV.Name = "prescriptionDGV";
             this.prescriptionDGV.RowHeadersVisible = false;
             this.prescriptionDGV.RowHeadersWidth = 51;
             this.prescriptionDGV.RowTemplate.Height = 24;
             this.prescriptionDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.prescriptionDGV.Size = new System.Drawing.Size(769, 193);
+            this.prescriptionDGV.Size = new System.Drawing.Size(769, 162);
             this.prescriptionDGV.TabIndex = 16;
             this.prescriptionDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.prescriptionDGV_CellContentClick);
             // 
@@ -511,7 +514,7 @@
             this.maskedTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBox2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maskedTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.maskedTextBox2.Location = new System.Drawing.Point(641, 378);
+            this.maskedTextBox2.Location = new System.Drawing.Point(642, 373);
             this.maskedTextBox2.Name = "maskedTextBox2";
             this.maskedTextBox2.ReadOnly = true;
             this.maskedTextBox2.Size = new System.Drawing.Size(89, 27);
@@ -524,7 +527,7 @@
             this.prescSearchTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.prescSearchTextBox.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.prescSearchTextBox.ForeColor = System.Drawing.Color.Black;
-            this.prescSearchTextBox.Location = new System.Drawing.Point(736, 378);
+            this.prescSearchTextBox.Location = new System.Drawing.Point(737, 373);
             this.prescSearchTextBox.Name = "prescSearchTextBox";
             this.prescSearchTextBox.Size = new System.Drawing.Size(95, 27);
             this.prescSearchTextBox.TabIndex = 17;
@@ -532,12 +535,42 @@
             this.prescSearchTextBox.TextChanged += new System.EventHandler(this.prescSearchTextBox_TextChanged);
             this.prescSearchTextBox.Enter += new System.EventHandler(this.prescSearchTextBox_Enter);
             // 
+            // printButton
+            // 
+            this.printButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.printButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printButton.ForeColor = System.Drawing.Color.White;
+            this.printButton.Location = new System.Drawing.Point(667, 579);
+            this.printButton.Name = "printButton";
+            this.printButton.Size = new System.Drawing.Size(134, 40);
+            this.printButton.TabIndex = 39;
+            this.printButton.Text = "Print";
+            this.printButton.UseVisualStyleBackColor = false;
+            this.printButton.Click += new System.EventHandler(this.printButton_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // Prescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1163, 631);
+            this.Controls.Add(this.printButton);
             this.Controls.Add(this.maskedTextBox2);
             this.Controls.Add(this.prescSearchTextBox);
             this.Controls.Add(this.prescriptionDGV);
@@ -606,5 +639,8 @@
         private System.Windows.Forms.TextBox prescTreatment;
         private System.Windows.Forms.MaskedTextBox maskedTextBox2;
         private System.Windows.Forms.MaskedTextBox prescSearchTextBox;
+        private System.Windows.Forms.Button printButton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

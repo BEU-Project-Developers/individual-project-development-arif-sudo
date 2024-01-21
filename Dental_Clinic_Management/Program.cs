@@ -16,7 +16,7 @@ namespace Dental_Clinic_Management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Dashboard());
+            Application.Run(new Forms.Splash());
         }
     }
 }
