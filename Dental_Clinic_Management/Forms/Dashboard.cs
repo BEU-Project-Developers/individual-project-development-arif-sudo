@@ -78,7 +78,22 @@ namespace Dental_Clinic_Management.Forms
                     DataTable dt4 = new DataTable();
                     sda4.Fill(dt4);
                     string[] parts = dt4.Rows[0][0].ToString().Split(' ');
-                    string result = parts[0] + "\n" + parts[1];
+
+                    string result;
+
+                    if (parts.Length > 1)
+                    {
+                        result = parts[0] + "\n" + parts[1];
+                    }
+                    else if (parts.Length > 0)
+                    {
+                        result = parts[0];
+                    }
+                    else
+                    {
+                        result = "None";
+                    }
+
                     nextAptProgressBar.Text = result;
                 }
                 catch (Exception ex) {

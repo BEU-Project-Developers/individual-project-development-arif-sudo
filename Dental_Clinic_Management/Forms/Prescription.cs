@@ -423,25 +423,29 @@ namespace Dental_Clinic_Management.Forms
         // Event handler for the button click event to initiate the printing process
         private void printButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Getting the current height of the DataGridView
+                int height = prescriptionDGV.Height;
 
-            // Getting the current height of the DataGridView
-            int height = prescriptionDGV.Height;
+                // Setting the DataGridView height to accommodate all rows for printing
+                prescriptionDGV.Height = prescriptionDGV.RowCount * prescriptionDGV.RowTemplate.Height * 2;
 
-            // Setting the DataGridView height to accommodate all rows for printing
-            prescriptionDGV.Height = prescriptionDGV.RowCount * prescriptionDGV.RowTemplate.Height * 2;
+                // Creating a new Bitmap with the dimensions of the DataGridView
+                bitmap = new Bitmap(prescriptionDGV.Width, prescriptionDGV.Height);
 
-            // Creating a new Bitmap with the dimensions of the DataGridView
-            bitmap = new Bitmap(prescriptionDGV.Width, prescriptionDGV.Height);
+                // Drawing the DataGridView content onto the Bitmap
+                prescriptionDGV.DrawToBitmap(bitmap, new Rectangle(0, 10, prescriptionDGV.Width, prescriptionDGV.Height));
 
-            // Drawing the DataGridView content onto the Bitmap
-            prescriptionDGV.DrawToBitmap(bitmap, new Rectangle(0, 10, prescriptionDGV.Width, prescriptionDGV.Height));
+                // Restore the original height of the DataGridView
+                prescriptionDGV.Height = height;
 
-            // Restore the original height of the DataGridView
-            prescriptionDGV.Height = height;
-
-            // Show the print preview dialog to preview the printed content
-            printPreviewDialog1.ShowDialog();
-            
+                // Show the print preview dialog to preview the printed content
+                printPreviewDialog1.ShowDialog();
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)

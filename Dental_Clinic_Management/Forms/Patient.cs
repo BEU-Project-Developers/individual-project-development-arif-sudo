@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Dental_Clinic_Management.Forms
 {
@@ -19,6 +20,8 @@ namespace Dental_Clinic_Management.Forms
         public Patient()
         {
             InitializeComponent();
+            patGenderCommoBox.Items.Add("Male");
+            patGenderCommoBox.Items.Add("Female");
         }
         // Key here represents PatId in database; later used to delete columns
         public static int key = 0;
@@ -36,7 +39,11 @@ namespace Dental_Clinic_Management.Forms
                 string phone = patPhone.Text;
                 string address = patAddress.Text;
                 DateTime dateOfBirth = patDateTimePicker.Value.Date;
-                string gender = patGenderCommoBox.SelectedValue?.ToString();
+                string gender = "";
+                if (patGenderCommoBox.SelectedItem != null)
+                {
+                    gender = patGenderCommoBox.SelectedItem.ToString();
+                }
                 string allergies = patAllergies.Text;
 
                 // Adding patient using custom MyPatient class
@@ -109,6 +116,16 @@ namespace Dental_Clinic_Management.Forms
                 patGenderCommoBox.SelectedItem = patientDGV.SelectedRows[0].Cells[5].Value.ToString();
                 patAllergies.Text = patientDGV.SelectedRows[0].Cells[6].Value.ToString();
 
+                string dateString = patientDGV.SelectedRows[0].Cells[4].Value.ToString();
+                if (!string.IsNullOrEmpty(dateString))
+                {
+                    // Parse the string to a DateTime object
+                    if (DateTime.TryParse(dateString, out DateTime dateValue))
+                    {
+                        // Assign the DateTime value to the DateTimePicker
+                        patDateTimePicker.Value = dateValue.Date;
+                    }
+                }
                 // Setting the key for deletion or update
                 if (patName.Text == "")
                 {
@@ -151,7 +168,7 @@ namespace Dental_Clinic_Management.Forms
                     patName.Text = "";
                     patPhone.Text = "";
                     patAddress.Text = "";
-                    patGenderCommoBox.SelectedValue = default; // selected item -> selected value !!!
+                    patGenderCommoBox.SelectedItem = ""; // selected item -> selected value !!!
                     patAllergies.Text = "";
                     this.Populate_PatientDGV();
                 }
@@ -172,7 +189,11 @@ namespace Dental_Clinic_Management.Forms
                 string phone = patPhone.Text;
                 string address = patAddress.Text;
                 DateTime dateOfBirth = patDateTimePicker.Value.Date;
-                string gender = patGenderCommoBox.SelectedValue?.ToString();
+                string gender = "";
+                if (patGenderCommoBox.SelectedItem != null)
+                {
+                    gender = patGenderCommoBox.SelectedItem.ToString();
+                }
                 string allergies = patAllergies.Text;
 
                 // Checking if a patient is selected for updating

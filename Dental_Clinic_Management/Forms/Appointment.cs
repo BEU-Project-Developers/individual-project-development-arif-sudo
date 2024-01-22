@@ -1,6 +1,7 @@
 ﻿using Dental_Clinic_Management.Connection;
 using Dental_Clinic_Management.ImageProcess;
 using Dental_Clinic_Management.My;
+using ServiceStack;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,7 @@ namespace Dental_Clinic_Management.Forms
 
         // Represents the key for the selected treatment
         public static int key = 0;
-        
+
 
         // Method to fill the patient ComboBox with patient names from the database.
         private void fillPatient()
@@ -72,7 +73,8 @@ namespace Dental_Clinic_Management.Forms
                     aptPatientComboBox.DataSource = dt;
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
                 return;
             }
@@ -95,7 +97,7 @@ namespace Dental_Clinic_Management.Forms
                         DataTable dt = new DataTable();
 
                         // Adding a column named 'PatName' with data type 'string' to the DataTable.
-                        dt.Columns.Add("TreatName", typeof (string));
+                        dt.Columns.Add("TreatName", typeof(string));
 
                         // Loading the data from the SqlDataReader into the DataTable.
                         dt.Load(reader);
@@ -111,7 +113,8 @@ namespace Dental_Clinic_Management.Forms
 
                     }
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;
@@ -194,7 +197,9 @@ namespace Dental_Clinic_Management.Forms
                 // Refreshing the Appointment DataGridView with updated data
                 this.Populate_Appointment();
 
-            } catch(Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
                 return;
             }
@@ -263,13 +268,14 @@ namespace Dental_Clinic_Management.Forms
                     // Populating the Appointment DataGridView
                     this.Populate_Appointment();
                 }
-                
-            } catch (Exception ex)
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
-            
+
+
 
         }
         // Method called when a cell in the DataGridView is clicked.
@@ -278,10 +284,29 @@ namespace Dental_Clinic_Management.Forms
             try
             {
                 // Populating the form fields with data from the selected DataGridView row
-                aptPatientComboBox.SelectedValue = aptDGV.SelectedRows[0].Cells[1].Value.ToString();
-                aptTreatmentComboBox.SelectedValue = aptDGV.SelectedRows[0].Cells[2].Value.ToString();
-                aptDate.Text = aptDGV.SelectedRows[0].Cells[3].Value.ToString();
-                aptTime.Text = aptDGV.SelectedRows[0].Cells[4].Value.ToString();
+                aptPatientComboBox.SelectedItem = aptDGV.SelectedRows[0].Cells[1].Value.ToString();
+                aptTreatmentComboBox.SelectedItem = aptDGV.SelectedRows[0].Cells[2].Value.ToString();
+
+                string dateString = aptDGV.SelectedRows[0].Cells[3].Value.ToString();
+                if (!string.IsNullOrEmpty(dateString))
+                {
+                    // Parse the string to a DateTime object
+                    if (DateTime.TryParse(dateString, out DateTime dateValue))
+                    {
+                        aptDate.Value = dateValue.Date;
+                    }
+                }
+                string timeString = aptDGV.SelectedRows[0].Cells[3].Value.ToString();
+                if (!string.IsNullOrEmpty(timeString))
+                {
+                    // Parse the string to a DateTime object
+                    if (TimeSpan.TryParse(timeString, out TimeSpan timeValue))
+                    {
+                        DateTime currentDate = DateTime.Today;
+                        DateTime selectedDateTime = currentDate.Add(timeValue);
+                        aptTime.Value = selectedDateTime;
+                    }
+                }
 
                 // Setting the key for deletion or update
                 if (aptPatientComboBox.SelectedValue == "")
